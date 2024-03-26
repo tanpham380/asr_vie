@@ -1,0 +1,16 @@
+# Ignore the lib folder
+lib/
+
+# Ignore .cer files
+cer/
+env/
+
+models/
+# Ignore .log files
+*.log
+
+
+*.wav
+
+
+*.mp3
