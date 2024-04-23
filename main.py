@@ -33,8 +33,8 @@ class AudioOfficial:
         # "vinai/PhoWhisper-large"
         # self.model = WhisperModel("./models/PhoWhisper-large-ct2" ,download_root=self.download_root, compute_type=computer_type, device=self.devicewhisper , num_workers= 4)
 
-        self.model = WhisperModel("large-v2" ,download_root=self.download_root, compute_type=computer_type, device=self.devicewhisper , num_workers= 4)
-        # self.translator = Translator("SeamlessM4T-Medium", vocoder_name_or_card="vocoder_v2",device=self.cuda , dtype=self.compute_type ,)
+        self.model = WhisperModel("large-v2" ,download_root=self.download_root, compute_type=computer_type, device=self.devicewhisper , num_workers= 40 , cpu_threads=40)
+        self.translator = Translator("seamlessM4T_v2_large", vocoder_name_or_card="vocoder_v2",device=self.cuda , dtype=self.compute_type ,)
         #seamlessM4T_medium vocoder_36langs
         #seamlessM4T_v2_large vocoder_v2
 
