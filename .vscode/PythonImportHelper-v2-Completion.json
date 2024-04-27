@@ -1590,14 +1590,6 @@
         "documentation": {}
     },
     {
-        "label": "Translator",
-        "importPath": "seamless_communication.inference",
-        "description": "seamless_communication.inference",
-        "isExtraImport": true,
-        "detail": "seamless_communication.inference",
-        "documentation": {}
-    },
-    {
         "label": "NGramRepeatBlockProcessor",
         "importPath": "fairseq2.generation",
         "description": "fairseq2.generation",
@@ -4167,6 +4159,46 @@
         "documentation": {}
     },
     {
+        "label": "BinaryIO",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "NamedTuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "LANGUAGE_CODE_TO_NAME",
         "importPath": "utils",
         "description": "utils",
@@ -5122,6 +5154,15 @@
         "description": "enum",
         "isExtraImport": true,
         "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
         "documentation": {}
     },
     {
@@ -8782,22 +8823,6 @@
         "documentation": {}
     },
     {
-        "label": "load_dataset",
-        "importPath": "datasets",
-        "description": "datasets",
-        "isExtraImport": true,
-        "detail": "datasets",
-        "documentation": {}
-    },
-    {
-        "label": "load_dataset",
-        "importPath": "datasets",
-        "description": "datasets",
-        "isExtraImport": true,
-        "detail": "datasets",
-        "documentation": {}
-    },
-    {
         "label": "split_dataset_by_node",
         "importPath": "datasets.distributed",
         "description": "datasets.distributed",
@@ -11994,163 +12019,11 @@
         "documentation": {}
     },
     {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "url_for",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "send_from_directory",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "secure_filename",
-        "importPath": "werkzeug.utils",
-        "description": "werkzeug.utils",
-        "isExtraImport": true,
-        "detail": "werkzeug.utils",
-        "documentation": {}
-    },
-    {
-        "label": "secure_filename",
-        "importPath": "werkzeug.utils",
-        "description": "werkzeug.utils",
-        "isExtraImport": true,
-        "detail": "werkzeug.utils",
-        "documentation": {}
-    },
-    {
         "label": "AudioOfficial",
         "importPath": "main",
         "description": "main",
         "isExtraImport": true,
         "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "AudioOfficial",
-        "importPath": "main",
-        "description": "main",
-        "isExtraImport": true,
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "clearFolderContent",
-        "importPath": "util",
-        "description": "util",
-        "isExtraImport": true,
-        "detail": "util",
-        "documentation": {}
-    },
-    {
-        "label": "clearFolderContent",
-        "importPath": "util",
-        "description": "util",
-        "isExtraImport": true,
-        "detail": "util",
         "documentation": {}
     },
     {
@@ -12170,7 +12043,7 @@
         "documentation": {}
     },
     {
-        "label": "crop_audio",
+        "label": "decode_audio",
         "importPath": "util",
         "description": "util",
         "isExtraImport": true,
@@ -12178,7 +12051,7 @@
         "documentation": {}
     },
     {
-        "label": "preprocess_audio",
+        "label": "format_text_segments",
         "importPath": "util",
         "description": "util",
         "isExtraImport": true,
@@ -12186,83 +12059,19 @@
         "documentation": {}
     },
     {
-        "label": "cross_origin",
-        "importPath": "flask_cors",
-        "description": "flask_cors",
+        "label": "get_assets_path",
+        "importPath": "util",
+        "description": "util",
         "isExtraImport": true,
-        "detail": "flask_cors",
+        "detail": "util",
         "documentation": {}
     },
     {
-        "label": "cross_origin",
-        "importPath": "flask_cors",
-        "description": "flask_cors",
+        "label": "WhisperModel",
+        "importPath": "faster_whisper",
+        "description": "faster_whisper",
         "isExtraImport": true,
-        "detail": "flask_cors",
-        "documentation": {}
-    },
-    {
-        "label": "Swagger",
-        "importPath": "flasgger",
-        "description": "flasgger",
-        "isExtraImport": true,
-        "detail": "flasgger",
-        "documentation": {}
-    },
-    {
-        "label": "Swagger",
-        "importPath": "flasgger",
-        "description": "flasgger",
-        "isExtraImport": true,
-        "detail": "flasgger",
-        "documentation": {}
-    },
-    {
-        "label": "serve",
-        "importPath": "waitress",
-        "description": "waitress",
-        "isExtraImport": true,
-        "detail": "waitress",
-        "documentation": {}
-    },
-    {
-        "label": "serve",
-        "importPath": "waitress",
-        "description": "waitress",
-        "isExtraImport": true,
-        "detail": "waitress",
-        "documentation": {}
-    },
-    {
-        "label": "pipeline",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "WhisperForConditionalGeneration",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "WhisperFeatureExtractor",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "WhisperTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
+        "detail": "faster_whisper",
         "documentation": {}
     },
     {
@@ -12290,43 +12099,27 @@
         "documentation": {}
     },
     {
-        "label": "pipeline",
-        "importPath": "transformers",
-        "description": "transformers",
+        "label": "VadOptions",
+        "importPath": "vad",
+        "description": "vad",
         "isExtraImport": true,
-        "detail": "transformers",
+        "detail": "vad",
         "documentation": {}
     },
     {
-        "label": "PeftModel",
-        "importPath": "peft",
-        "description": "peft",
+        "label": "collect_chunks",
+        "importPath": "vad",
+        "description": "vad",
         "isExtraImport": true,
-        "detail": "peft",
+        "detail": "vad",
         "documentation": {}
     },
     {
-        "label": "PeftConfig",
-        "importPath": "peft",
-        "description": "peft",
+        "label": "get_speech_timestamps",
+        "importPath": "vad",
+        "description": "vad",
         "isExtraImport": true,
-        "detail": "peft",
-        "documentation": {}
-    },
-    {
-        "label": "WhisperModel",
-        "importPath": "faster_whisper",
-        "description": "faster_whisper",
-        "isExtraImport": true,
-        "detail": "faster_whisper",
-        "documentation": {}
-    },
-    {
-        "label": "WhisperModel",
-        "importPath": "faster_whisper",
-        "description": "faster_whisper",
-        "isExtraImport": true,
-        "detail": "faster_whisper",
+        "detail": "vad",
         "documentation": {}
     },
     {
@@ -12338,11 +12131,30 @@
         "documentation": {}
     },
     {
-        "label": "AudioSegment",
-        "importPath": "pydub",
-        "description": "pydub",
+        "label": "gc",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "pydub",
+        "importPath": "gc",
+        "description": "gc",
+        "detail": "gc",
+        "documentation": {}
+    },
+    {
+        "label": "av",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "av",
+        "description": "av",
+        "detail": "av",
+        "documentation": {}
+    },
+    {
+        "label": "bisect",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bisect",
+        "description": "bisect",
+        "detail": "bisect",
         "documentation": {}
     },
     {
@@ -30562,344 +30374,11 @@
         "documentation": {}
     },
     {
-        "label": "allowed_file",
-        "kind": 2,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "def allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\nswagger = Swagger(app)\n@app.route(\"/video/<filename>\")\ndef get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)\n@app.route(\"/\")\ndef home():\n    return redirect(url_for('flasgger.apidocs'))\n@app.route('/api', methods=['POST'])",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "get_video",
-        "kind": 2,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "def get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)\n@app.route(\"/\")\ndef home():\n    return redirect(url_for('flasgger.apidocs'))\n@app.route('/api', methods=['POST'])\ndef extractvoicetext():\n    \"\"\"\n    Extracts text from audio file.\n    ---",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "home",
-        "kind": 2,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "def home():\n    return redirect(url_for('flasgger.apidocs'))\n@app.route('/api', methods=['POST'])\ndef extractvoicetext():\n    \"\"\"\n    Extracts text from audio file.\n    ---\n    parameters:\n      - name: file\n        in: formData",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "extractvoicetext",
-        "kind": 2,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "def extractvoicetext():\n    \"\"\"\n    Extracts text from audio file.\n    ---\n    parameters:\n      - name: file\n        in: formData\n        type: file\n        required: no\n        description: The audio file to process (MP3 or WAV).",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "log_request_info",
-        "kind": 2,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "def log_request_info():\n    app.logger.info('Request Headers: %s', request.headers)\n    app.logger.info('Request Method: %s', request.method)\n    app.logger.info('Request URL: %s', request.url)\n    app.logger.info('Request Data: %s', request.data)\nif __name__ == '__main__':\n    Detect = AudioOfficial(\n        # audio_path=\"./models/seamless-m4t-v2-large/\",\n        down_nmodel_path = \"./models/\" ,\n        model = \"large-v3\",",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "app = Flask(__name__)\nUPLOAD_FOLDER = './run/uploads/'\napp.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER\nALLOWED_EXTENSIONS = set(['mp3', 'wav'])\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\nswagger = Swagger(app)\n@app.route(\"/video/<filename>\")\ndef get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "UPLOAD_FOLDER",
-        "kind": 5,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "UPLOAD_FOLDER = './run/uploads/'\napp.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER\nALLOWED_EXTENSIONS = set(['mp3', 'wav'])\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\nswagger = Swagger(app)\n@app.route(\"/video/<filename>\")\ndef get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)\n@app.route(\"/\")",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "app.config['UPLOAD_FOLDER']",
-        "kind": 5,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER\nALLOWED_EXTENSIONS = set(['mp3', 'wav'])\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\nswagger = Swagger(app)\n@app.route(\"/video/<filename>\")\ndef get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)\n@app.route(\"/\")\ndef home():",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "ALLOWED_EXTENSIONS",
-        "kind": 5,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "ALLOWED_EXTENSIONS = set(['mp3', 'wav'])\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\nswagger = Swagger(app)\n@app.route(\"/video/<filename>\")\ndef get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)\n@app.route(\"/\")\ndef home():\n    return redirect(url_for('flasgger.apidocs'))",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "swagger",
-        "kind": 5,
-        "importPath": "pythontemp.app2",
-        "description": "pythontemp.app2",
-        "peekOfCode": "swagger = Swagger(app)\n@app.route(\"/video/<filename>\")\ndef get_video(filename):\n    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)\n@app.route(\"/\")\ndef home():\n    return redirect(url_for('flasgger.apidocs'))\n@app.route('/api', methods=['POST'])\ndef extractvoicetext():\n    \"\"\"",
-        "detail": "pythontemp.app2",
-        "documentation": {}
-    },
-    {
-        "label": "MODEL_ID",
-        "kind": 5,
-        "importPath": "pythontemp.test",
-        "description": "pythontemp.test",
-        "peekOfCode": "MODEL_ID = \"vinai/PhoWhisper-large\"\npipe = pipeline(task=\"automatic-speech-recognition\", model=MODEL_ID)\npipe = pipeline(\n    task=\"automatic-speech-recognition\",\n    model=MODEL_ID,\n    chunk_length_s=30, \n    stride_length_s=(5,5), \n    return_timestamps=True,\n)\nres = pipe('converted_file.wav', )",
-        "detail": "pythontemp.test",
-        "documentation": {}
-    },
-    {
-        "label": "pipe",
-        "kind": 5,
-        "importPath": "pythontemp.test",
-        "description": "pythontemp.test",
-        "peekOfCode": "pipe = pipeline(task=\"automatic-speech-recognition\", model=MODEL_ID)\npipe = pipeline(\n    task=\"automatic-speech-recognition\",\n    model=MODEL_ID,\n    chunk_length_s=30, \n    stride_length_s=(5,5), \n    return_timestamps=True,\n)\nres = pipe('converted_file.wav', )\nprint(res)",
-        "detail": "pythontemp.test",
-        "documentation": {}
-    },
-    {
-        "label": "pipe",
-        "kind": 5,
-        "importPath": "pythontemp.test",
-        "description": "pythontemp.test",
-        "peekOfCode": "pipe = pipeline(\n    task=\"automatic-speech-recognition\",\n    model=MODEL_ID,\n    chunk_length_s=30, \n    stride_length_s=(5,5), \n    return_timestamps=True,\n)\nres = pipe('converted_file.wav', )\nprint(res)",
-        "detail": "pythontemp.test",
-        "documentation": {}
-    },
-    {
-        "label": "res",
-        "kind": 5,
-        "importPath": "pythontemp.test",
-        "description": "pythontemp.test",
-        "peekOfCode": "res = pipe('converted_file.wav', )\nprint(res)",
-        "detail": "pythontemp.test",
-        "documentation": {}
-    },
-    {
-        "label": "PEFT_MODEL_ID",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "PEFT_MODEL_ID = \"doof-ferb/whisper-large-peft-lora-vi\"\nBASE_MODEL_ID = PeftConfig.from_pretrained(PEFT_MODEL_ID).base_model_name_or_path\nFEATURE_EXTRACTOR = WhisperFeatureExtractor.from_pretrained(BASE_MODEL_ID)\nTOKENIZER = WhisperTokenizer.from_pretrained(BASE_MODEL_ID)\nMODEL = PeftModel.from_pretrained(\n    WhisperForConditionalGeneration.from_pretrained(BASE_MODEL_ID, torch_dtype=torch.float16).to(\"cuda:0\"),\n    PEFT_MODEL_ID\n).merge_and_unload(progressbar=True)\nDECODER_ID = torch.tensor(\n    TOKENIZER.convert_tokens_to_ids([\"<|startoftranscript|>\", \"<|vi|>\", \"<|transcribe|>\", \"<|notimestamps|>\"]),",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_MODEL_ID",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "BASE_MODEL_ID = PeftConfig.from_pretrained(PEFT_MODEL_ID).base_model_name_or_path\nFEATURE_EXTRACTOR = WhisperFeatureExtractor.from_pretrained(BASE_MODEL_ID)\nTOKENIZER = WhisperTokenizer.from_pretrained(BASE_MODEL_ID)\nMODEL = PeftModel.from_pretrained(\n    WhisperForConditionalGeneration.from_pretrained(BASE_MODEL_ID, torch_dtype=torch.float16).to(\"cuda:0\"),\n    PEFT_MODEL_ID\n).merge_and_unload(progressbar=True)\nDECODER_ID = torch.tensor(\n    TOKENIZER.convert_tokens_to_ids([\"<|startoftranscript|>\", \"<|vi|>\", \"<|transcribe|>\", \"<|notimestamps|>\"]),\n    device=MODEL.device",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "FEATURE_EXTRACTOR",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "FEATURE_EXTRACTOR = WhisperFeatureExtractor.from_pretrained(BASE_MODEL_ID)\nTOKENIZER = WhisperTokenizer.from_pretrained(BASE_MODEL_ID)\nMODEL = PeftModel.from_pretrained(\n    WhisperForConditionalGeneration.from_pretrained(BASE_MODEL_ID, torch_dtype=torch.float16).to(\"cuda:0\"),\n    PEFT_MODEL_ID\n).merge_and_unload(progressbar=True)\nDECODER_ID = torch.tensor(\n    TOKENIZER.convert_tokens_to_ids([\"<|startoftranscript|>\", \"<|vi|>\", \"<|transcribe|>\", \"<|notimestamps|>\"]),\n    device=MODEL.device\n).unsqueeze(dim=0)",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "TOKENIZER",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "TOKENIZER = WhisperTokenizer.from_pretrained(BASE_MODEL_ID)\nMODEL = PeftModel.from_pretrained(\n    WhisperForConditionalGeneration.from_pretrained(BASE_MODEL_ID, torch_dtype=torch.float16).to(\"cuda:0\"),\n    PEFT_MODEL_ID\n).merge_and_unload(progressbar=True)\nDECODER_ID = torch.tensor(\n    TOKENIZER.convert_tokens_to_ids([\"<|startoftranscript|>\", \"<|vi|>\", \"<|transcribe|>\", \"<|notimestamps|>\"]),\n    device=MODEL.device\n).unsqueeze(dim=0)\nwaveform, sampling_rate = torchaudio.load(\"1.mp3\")",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "MODEL",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "MODEL = PeftModel.from_pretrained(\n    WhisperForConditionalGeneration.from_pretrained(BASE_MODEL_ID, torch_dtype=torch.float16).to(\"cuda:0\"),\n    PEFT_MODEL_ID\n).merge_and_unload(progressbar=True)\nDECODER_ID = torch.tensor(\n    TOKENIZER.convert_tokens_to_ids([\"<|startoftranscript|>\", \"<|vi|>\", \"<|transcribe|>\", \"<|notimestamps|>\"]),\n    device=MODEL.device\n).unsqueeze(dim=0)\nwaveform, sampling_rate = torchaudio.load(\"1.mp3\")\nif waveform.size(0) > 1:  # convert dual to mono channel",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "DECODER_ID",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "DECODER_ID = torch.tensor(\n    TOKENIZER.convert_tokens_to_ids([\"<|startoftranscript|>\", \"<|vi|>\", \"<|transcribe|>\", \"<|notimestamps|>\"]),\n    device=MODEL.device\n).unsqueeze(dim=0)\nwaveform, sampling_rate = torchaudio.load(\"1.mp3\")\nif waveform.size(0) > 1:  # convert dual to mono channel\n    waveform = waveform.mean(dim=0, keepdim=True)\ninputs = FEATURE_EXTRACTOR(waveform, sampling_rate=sampling_rate, return_tensors=\"pt\").to(MODEL.device)\nwith torch.inference_mode(), torch.autocast(device_type=\"cuda\"):  # required by PEFT\n    predicted_ids = MODEL.generate(input_features=inputs.input_features, decoder_input_ids=DECODER_ID)",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "inputs",
-        "kind": 5,
-        "importPath": "pythontemp.test2",
-        "description": "pythontemp.test2",
-        "peekOfCode": "inputs = FEATURE_EXTRACTOR(waveform, sampling_rate=sampling_rate, return_tensors=\"pt\").to(MODEL.device)\nwith torch.inference_mode(), torch.autocast(device_type=\"cuda\"):  # required by PEFT\n    predicted_ids = MODEL.generate(input_features=inputs.input_features, decoder_input_ids=DECODER_ID)\nTOKENIZER.batch_decode(predicted_ids, skip_special_tokens=True)[0]",
-        "detail": "pythontemp.test2",
-        "documentation": {}
-    },
-    {
-        "label": "device",
-        "kind": 5,
-        "importPath": "pythontemp.test3",
-        "description": "pythontemp.test3",
-        "peekOfCode": "device = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"\ncompute_type = \"float16\" if torch.cuda.is_available() else \"float32\"\n# load model on GPU if available, else cpu\nmodel = WhisperModel(\"distil-whisper/distil-large-v3-ct2\", device=device, compute_type=compute_type)\n# load toy dataset for example\nsample = \"1.mp3\"\nsegments, info = model.transcribe(sample, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500), word_timestamps=True, language=\"vi\")\nfor segment in segments:\n    print(\"[%.2fs -> %.2fs] %s\" % (segment.start, segment.end, segment.text))",
-        "detail": "pythontemp.test3",
-        "documentation": {}
-    },
-    {
-        "label": "compute_type",
-        "kind": 5,
-        "importPath": "pythontemp.test3",
-        "description": "pythontemp.test3",
-        "peekOfCode": "compute_type = \"float16\" if torch.cuda.is_available() else \"float32\"\n# load model on GPU if available, else cpu\nmodel = WhisperModel(\"distil-whisper/distil-large-v3-ct2\", device=device, compute_type=compute_type)\n# load toy dataset for example\nsample = \"1.mp3\"\nsegments, info = model.transcribe(sample, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500), word_timestamps=True, language=\"vi\")\nfor segment in segments:\n    print(\"[%.2fs -> %.2fs] %s\" % (segment.start, segment.end, segment.text))",
-        "detail": "pythontemp.test3",
-        "documentation": {}
-    },
-    {
-        "label": "model",
-        "kind": 5,
-        "importPath": "pythontemp.test3",
-        "description": "pythontemp.test3",
-        "peekOfCode": "model = WhisperModel(\"distil-whisper/distil-large-v3-ct2\", device=device, compute_type=compute_type)\n# load toy dataset for example\nsample = \"1.mp3\"\nsegments, info = model.transcribe(sample, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500), word_timestamps=True, language=\"vi\")\nfor segment in segments:\n    print(\"[%.2fs -> %.2fs] %s\" % (segment.start, segment.end, segment.text))",
-        "detail": "pythontemp.test3",
-        "documentation": {}
-    },
-    {
-        "label": "sample",
-        "kind": 5,
-        "importPath": "pythontemp.test3",
-        "description": "pythontemp.test3",
-        "peekOfCode": "sample = \"1.mp3\"\nsegments, info = model.transcribe(sample, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500), word_timestamps=True, language=\"vi\")\nfor segment in segments:\n    print(\"[%.2fs -> %.2fs] %s\" % (segment.start, segment.end, segment.text))",
-        "detail": "pythontemp.test3",
-        "documentation": {}
-    },
-    {
-        "label": "device",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "device = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"\ntorch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32\nmodel_id = \"distil-whisper/distil-large-v3\"\nmodel = AutoModelForSpeechSeq2Seq.from_pretrained(\n    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True\n)\nmodel.to(device)\nprocessor = AutoProcessor.from_pretrained(model_id)\npipe = pipeline(\n    \"automatic-speech-recognition\",",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "torch_dtype",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32\nmodel_id = \"distil-whisper/distil-large-v3\"\nmodel = AutoModelForSpeechSeq2Seq.from_pretrained(\n    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True\n)\nmodel.to(device)\nprocessor = AutoProcessor.from_pretrained(model_id)\npipe = pipeline(\n    \"automatic-speech-recognition\",\n    model=model,",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "model_id",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "model_id = \"distil-whisper/distil-large-v3\"\nmodel = AutoModelForSpeechSeq2Seq.from_pretrained(\n    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True\n)\nmodel.to(device)\nprocessor = AutoProcessor.from_pretrained(model_id)\npipe = pipeline(\n    \"automatic-speech-recognition\",\n    model=model,\n    tokenizer=processor.tokenizer,",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "model",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "model = AutoModelForSpeechSeq2Seq.from_pretrained(\n    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True\n)\nmodel.to(device)\nprocessor = AutoProcessor.from_pretrained(model_id)\npipe = pipeline(\n    \"automatic-speech-recognition\",\n    model=model,\n    tokenizer=processor.tokenizer,\n    feature_extractor=processor.feature_extractor,",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "processor",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "processor = AutoProcessor.from_pretrained(model_id)\npipe = pipeline(\n    \"automatic-speech-recognition\",\n    model=model,\n    tokenizer=processor.tokenizer,\n    feature_extractor=processor.feature_extractor,\n    max_new_tokens=128,\n    torch_dtype=torch_dtype,\n    device=device,\n)",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "pipe",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "pipe = pipeline(\n    \"automatic-speech-recognition\",\n    model=model,\n    tokenizer=processor.tokenizer,\n    feature_extractor=processor.feature_extractor,\n    max_new_tokens=128,\n    torch_dtype=torch_dtype,\n    device=device,\n)\ndataset = load_dataset(\"hf-internal-testing/librispeech_asr_dummy\", \"clean\", split=\"validation\")",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "dataset",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "dataset = load_dataset(\"hf-internal-testing/librispeech_asr_dummy\", \"clean\", split=\"validation\")\nsample = dataset[0][\"audio\"]\nresult = pipe(sample, return_timestamps=True , generate_kwargs={\"language\": \"Vietnamese\"})\nprint(result[\"text\"])",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "sample",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "sample = dataset[0][\"audio\"]\nresult = pipe(sample, return_timestamps=True , generate_kwargs={\"language\": \"Vietnamese\"})\nprint(result[\"text\"])",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "result",
-        "kind": 5,
-        "importPath": "pythontemp.test4",
-        "description": "pythontemp.test4",
-        "peekOfCode": "result = pipe(sample, return_timestamps=True , generate_kwargs={\"language\": \"Vietnamese\"})\nprint(result[\"text\"])",
-        "detail": "pythontemp.test4",
-        "documentation": {}
-    },
-    {
-        "label": "run_asr_facebook",
-        "kind": 2,
-        "importPath": "pythontemp.z",
-        "description": "pythontemp.z",
-        "peekOfCode": "def run_asr_facebook(input_audio: str, target_language: str) -> str:\n    out_texts, _ = translator.predict(\n        input=input_audio,\n        task_str=\"ASR\",\n        src_lang=target_language,\n        tgt_lang=target_language,\n    )\n    return str(out_texts[0])\ndef crop_audio(input_file, output_file, start_time_ms, end_time_ms):\n    # Load the audio file",
-        "detail": "pythontemp.z",
-        "documentation": {}
-    },
-    {
-        "label": "crop_audio",
-        "kind": 2,
-        "importPath": "pythontemp.z",
-        "description": "pythontemp.z",
-        "peekOfCode": "def crop_audio(input_file, output_file, start_time_ms, end_time_ms):\n    # Load the audio file\n    audio = AudioSegment.from_file(input_file)\n    # Crop the audio\n    cropped_audio = audio[start_time_ms:end_time_ms]\n    # Export the cropped audio to a new file\n    cropped_audio.export(output_file, format=\"mp3\")  # Adjust the format as needed\nif __name__ == '__main__':\n    input = \"converted_file.wav\"\n    output = \"output.wav\"",
-        "detail": "pythontemp.z",
-        "documentation": {}
-    },
-    {
-        "label": "translator",
-        "kind": 5,
-        "importPath": "pythontemp.z",
-        "description": "pythontemp.z",
-        "peekOfCode": "translator = Translator(\"seamlessM4T_v2_large\", vocoder_name_or_card=\"vocoder_v2\",device=torch.device(\"cpu\") , dtype=torch.float32 )\ndef run_asr_facebook(input_audio: str, target_language: str) -> str:\n    out_texts, _ = translator.predict(\n        input=input_audio,\n        task_str=\"ASR\",\n        src_lang=target_language,\n        tgt_lang=target_language,\n    )\n    return str(out_texts[0])\ndef crop_audio(input_file, output_file, start_time_ms, end_time_ms):",
-        "detail": "pythontemp.z",
-        "documentation": {}
-    },
-    {
         "label": "transcribe",
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    text = \"\"\n    # max_length = int(MAX_INPUT_AUDIO_LENGTH * AUDIO_SAMPLE_RATE)\n    # if new_arr.shape[1] > max_length:\n    #     new_arr = new_arr[:, :max_length]\n    #     gr.Warning(f\"Input audio is too long. Only the first {MAX_INPUT_AUDIO_LENGTH} seconds is used.\")\n    # text = pipe(inputs, batch_size=BATCH_SIZE, generate_kwargs={\"task\": task}, return_timestamps=True)[\"text\"]\n    data , Resuft = Detect.ExtractText(inputs)",
+        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    text1 = \"\"\n    text2 = \"\"\n    Result1 , Result2 = Detect.ExtractText(inputs)\n    for text in Result1 :\n        text1 += f\"{text['text']}. \\n\"\n    for text in Result2 :\n        text2 += f\"{text['text']}. \\n\"",
         "detail": "app",
         "documentation": {}
     },
@@ -30926,7 +30405,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "file_transcribe = gr.Interface(\n    fn=transcribe,\n    inputs=[\n        gr.Audio(sources=[\"upload\"], type=\"filepath\", label=\"Audio file\" , max_length = 360),\n        # gr.Radio([\"transcribe\", \"translate\"], label=\"Task\", value=\"transcribe\"),\n    ],\n    outputs=\"text\",\n    # theme=\"huggingface\",\n    title=\"Audio to Text\",\n    description=(",
+        "peekOfCode": "file_transcribe = gr.Interface(\n    fn=transcribe,\n    inputs=[\n        gr.Audio(sources=[\"upload\"], type=\"filepath\", label=\"Audio file\" #, max_length = 360\n                 ),\n        # gr.Radio([\"transcribe\", \"translate\"], label=\"Task\", value=\"transcribe\"),\n    ],\n    outputs=\"text\",\n    # theme=\"huggingface\",\n    title=\"Audio to Text\",",
         "detail": "app",
         "documentation": {}
     },
@@ -30935,34 +30414,43 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class AudioOfficial:\n    def __init__(self, **kwargs):\n        if torch.cuda.is_available():\n            self.cuda = torch.device(\"cuda:0\")\n            self.compute_type=torch.float16\n            self.devicewhisper = \"cuda\"\n        else:\n            self.cuda = torch.device(\"cpu\")\n            self.compute_type=torch.float32\n            self.devicewhisper = \"cpu\"",
+        "peekOfCode": "class AudioOfficial:\n    def __init__(self, **kwargs):\n        if torch.cuda.is_available():\n            self.cuda = torch.device(\"cuda:0\")\n            self.compute_type=torch.float32\n            self.devicewhisper = \"cuda\"\n        else:\n            self.cuda = torch.device(\"cpu\")\n            self.compute_type=torch.float32\n            self.devicewhisper = \"cpu\"",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "clearFolderContent",
+        "label": "format_text_segments",
         "kind": 2,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "def clearFolderContent(folder_path):\n    # Function to clear contents of a folder\n    for filename in os.listdir(folder_path):\n        file_path = os.path.join(folder_path, filename)\n        try:\n            if os.path.isfile(file_path):\n                os.unlink(file_path)\n        except Exception as e:\n            print(f\"Failed to delete {file_path}. Reason: {e}\")\ndef preprocess_audio(input_audio: str, output_path: str = \"./run/uploads/\") -> str:",
+        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        start_time_str = format_timestamp(start_time)\n        end_time_str = format_timestamp(end_time)\n        formatted_segment = f\"[{start_time_str}:{end_time_str}] : {segment['text']}\"\n        formatted_segments.append(formatted_segment)\n    return formatted_segments\ndef decode_audio(",
         "detail": "util",
         "documentation": {}
     },
     {
-        "label": "preprocess_audio",
+        "label": "decode_audio",
         "kind": 2,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "def preprocess_audio(input_audio: str, output_path: str = \"./run/uploads/\") -> str:\n    arr, org_sr = torchaudio.load(input_audio)\n    num_channels = arr.shape[0]\n    if num_channels == 2:\n        a = \"Đây là stereo (dual channel) audio.\"\n    elif num_channels == 1:\n        a = \"Đây là mono channel audio.\"\n    else:\n        a= \"Không xác định được số kênh của tín hiệu âm thanh.\"\n    if arr.size(0) > 1:  # convert dual to mono channel",
+        "peekOfCode": "def decode_audio(\n    input_file: Union[str, BinaryIO],\n    sampling_rate: int = 16000,\n    split_stereo: bool = False,\n):\n    \"\"\"Decodes the audio.\n    Args:\n      input_file: Path to the input file or a file-like object.\n      sampling_rate: Resample the audio to this sample rate.\n      split_stereo: Return separate left and right channels.",
         "detail": "util",
         "documentation": {}
     },
     {
-        "label": "crop_audio",
+        "label": "get_assets_path",
         "kind": 2,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "def crop_audio(audio_tensor, start_time, end_time):\n    audio = AudioSegment.from_file(audio_tensor)\n    segment = audio[start_time:end_time]\n    temp_path = \"./run/uploads/temporary_audio.wav\"\n    segment.export(temp_path, format=\"wav\")\n    return temp_path\nlanguage_code_to_name = {\n    \"afr\": \"Afrikaans\",\n    \"amh\": \"Amharic\",\n    \"arb\": \"Modern Standard Arabic\",",
+        "peekOfCode": "def get_assets_path():\n    \"\"\"Returns the path to the assets directory.\"\"\"\n    return os.path.join(os.path.dirname(os.path.abspath(__file__)), \"assets\")\ndef format_timestamp(\n    seconds: float,\n    always_include_hours: bool = False,\n    decimal_marker: str = \".\",\n) -> str:\n    assert seconds >= 0, \"non-negative timestamp expected\"\n    milliseconds = round(seconds * 1000.0)",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "format_timestamp",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def format_timestamp(\n    seconds: float,\n    always_include_hours: bool = False,\n    decimal_marker: str = \".\",\n) -> str:\n    assert seconds >= 0, \"non-negative timestamp expected\"\n    milliseconds = round(seconds * 1000.0)\n    hours = milliseconds // 3_600_000\n    milliseconds -= hours * 3_600_000\n    minutes = milliseconds // 60_000",
         "detail": "util",
         "documentation": {}
     },
@@ -31054,6 +30542,60 @@
         "description": "util",
         "peekOfCode": "ASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES",
         "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "VadOptions",
+        "kind": 6,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "class VadOptions(NamedTuple):\n    \"\"\"VAD options.\n    Attributes:\n      threshold: Speech threshold. Silero VAD outputs speech probabilities for each audio chunk,\n        probabilities ABOVE this value are considered as SPEECH. It is better to tune this\n        parameter for each dataset separately, but \"lazy\" 0.5 is pretty good for most datasets.\n      min_speech_duration_ms: Final speech chunks shorter min_speech_duration_ms are thrown out.\n      max_speech_duration_s: Maximum duration of speech chunks in seconds. Chunks longer\n        than max_speech_duration_s will be split at the timestamp of the last silence that\n        lasts more than 100ms (if any), to prevent aggressive cutting. Otherwise, they will be",
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "SpeechTimestampsMap",
+        "kind": 6,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "class SpeechTimestampsMap:\n    \"\"\"Helper class to restore original speech timestamps.\"\"\"\n    def __init__(self, chunks: List[dict], sampling_rate: int, time_precision: int = 2):\n        self.sampling_rate = sampling_rate\n        self.time_precision = time_precision\n        self.chunk_end_sample = []\n        self.total_silence_before = []\n        previous_end = 0\n        silent_samples = 0\n        for chunk in chunks:",
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "SileroVADModel",
+        "kind": 6,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "class SileroVADModel:\n    def __init__(self, path):\n        try:\n            import onnxruntime\n        except ImportError as e:\n            raise RuntimeError(\n                \"Applying the VAD filter requires the onnxruntime package\"\n            ) from e\n        opts = onnxruntime.SessionOptions()\n        opts.inter_op_num_threads = 1",
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "get_speech_timestamps",
+        "kind": 2,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "def get_speech_timestamps(\n    audio: np.ndarray,\n    vad_options: Optional[VadOptions] = None,\n    **kwargs,\n) -> List[dict]:\n    \"\"\"This method is used for splitting long audios into speech chunks using silero VAD.\n    Args:\n      audio: One dimensional float array.\n      vad_options: Options for VAD processing.\n      kwargs: VAD options passed as keyword arguments for backward compatibility.",
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "collect_chunks",
+        "kind": 2,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "def collect_chunks(audio: np.ndarray, chunks: List[dict]) -> np.ndarray:\n    \"\"\"Collects and concatenates audio chunks.\"\"\"\n    if not chunks:\n        return np.array([], dtype=np.float32)\n    return np.concatenate([audio[chunk[\"start\"] : chunk[\"end\"]] for chunk in chunks])\nclass SpeechTimestampsMap:\n    \"\"\"Helper class to restore original speech timestamps.\"\"\"\n    def __init__(self, chunks: List[dict], sampling_rate: int, time_precision: int = 2):\n        self.sampling_rate = sampling_rate\n        self.time_precision = time_precision",
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "get_vad_model",
+        "kind": 2,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "def get_vad_model():\n    \"\"\"Returns the VAD model instance.\"\"\"\n    path = os.path.join(get_assets_path(), \"silero_vad.onnx\")\n    return SileroVADModel(path)\nclass SileroVADModel:\n    def __init__(self, path):\n        try:\n            import onnxruntime\n        except ImportError as e:\n            raise RuntimeError(",
+        "detail": "vad",
         "documentation": {}
     }
 ]

@@ -1,0 +1,163 @@
+accelerate==0.28.0
+aiofiles==23.2.1
+aiohttp==3.9.3
+aiosignal==1.3.1
+alembic==1.13.1
+altair==5.2.0
+annotated-types==0.6.0
+antlr4-python3-runtime==4.9.3
+anyio==4.3.0
+asteroid-filterbanks==0.4.0
+async-timeout==4.0.3
+attrs==23.2.0
+audioread==3.0.1
+av==11.0.0
+blinker==1.7.0
+Brotli @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_01vdzesc6m/croots/recipe/brotli-split_1659616063272/work
+certifi @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_dfez5lkpj0/croot/certifi_1707229180975/work/certifi
+cffi==1.16.0
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click==8.1.7
+colorama==0.4.6
+coloredlogs==15.0.1
+colorlog==6.8.2
+contourpy==1.2.0
+ctranslate2==4.1.0
+cycler==0.12.1
+datasets==2.18.0
+decorator==5.1.1
+dill==0.3.8
+docopt==0.6.2
+einops==0.7.0
+exceptiongroup==1.2.0
+fastapi==0.110.0
+faster-whisper==1.0.0
+ffmpy==0.3.2
+filelock @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cd61an5em3/croot/filelock_1700591192468/work
+Flask==3.0.2
+Flask-Cors==4.0.0
+flatbuffers==24.3.7
+fonttools==4.50.0
+frozenlist==1.4.1
+fsspec==2024.2.0
+gmpy2 @ file:///opt/concourse/worker/volumes/live/22766409-e78a-4fb0-711e-bd031212d672/volume/gmpy2_1645455563619/work
+gradio==4.23.0
+gradio_client==0.14.0
+greenlet==3.0.3
+h11==0.14.0
+httpcore==1.0.4
+httpx==0.27.0
+huggingface-hub==0.21.4
+humanfriendly==10.0
+HyperPyYAML==1.2.2
+idna @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_00jf0h4zbt/croot/idna_1666125573348/work
+importlib_resources==6.4.0
+itsdangerous==2.1.2
+Jinja2 @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_524l12w9yv/croot/jinja2_1706733629737/work
+joblib==1.3.2
+jsonschema==4.21.1
+jsonschema-specifications==2023.12.1
+julius==0.2.7
+kiwisolver==1.4.5
+lazy_loader==0.3
+librosa==0.10.1
+lightning==2.2.1
+lightning-utilities==0.10.1
+llvmlite==0.42.0
+Mako==1.3.2
+markdown-it-py==3.0.0
+MarkupSafe @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3a_cffw83x/croot/markupsafe_1704205995714/work
+matplotlib==3.8.3
+mdurl==0.1.2
+mkl-fft @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_af8wl3mjfu/croot/mkl_fft_1695058185839/work
+mkl-random @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_0fq2s894lk/croot/mkl_random_1695059822529/work
+mkl-service==2.4.0
+mpmath @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_8fyoqwupl2/croot/mpmath_1690848275746/work
+msgpack==1.0.8
+multidict==6.0.5
+multiprocess==0.70.16
+networkx @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_666p3uavvu/croot/networkx_1690562005807/work
+nltk==3.8.1
+numba==0.59.0
+numpy @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_b7iptlxgej/croot/numpy_and_numpy_base_1708638622773/work/dist/numpy-1.26.4-cp310-cp310-macosx_10_9_x86_64.whl#sha256=3a091282d65449198047c750ee795786a0222d5b42b704d32838b504a7523d8c
+omegaconf==2.3.0
+onnxruntime==1.16.3
+optuna==3.6.0
+orjson==3.9.15
+packaging==24.0
+pandas==2.2.1
+peft==0.10.0
+pillow @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_f8zh99mhe_/croot/pillow_1707233029679/work
+platformdirs==4.2.0
+pooch==1.8.1
+primePy==1.3
+protobuf==5.26.0
+psutil==5.9.8
+pyannote.audio==3.1.1
+pyannote.core==5.0.0
+pyannote.database==5.0.1
+pyannote.metrics==3.2.1
+pyannote.pipeline==3.0.1
+pyarrow==15.0.2
+pyarrow-hotfix==0.6
+pycparser==2.21
+pydantic==2.6.4
+pydantic_core==2.16.3
+pydub==0.25.1
+Pygments==2.17.2
+pyparsing==3.1.2
+PySocks @ file:///Users/builder/ci_310/pysocks_1642536366386/work
+python-dateutil==2.9.0.post0
+python-multipart==0.0.9
+pytorch-lightning==2.2.1
+pytorch-metric-learning==2.4.1
+pytz==2024.1
+PyYAML==6.0.1
+referencing==0.34.0
+regex==2023.12.25
+requests @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_4fp_3tflo8/croot/requests_1707355574897/work
+rich==13.7.1
+rpds-py==0.18.0
+ruamel.yaml==0.18.6
+ruamel.yaml.clib==0.2.8
+ruff==0.3.4
+safetensors==0.4.2
+scikit-learn==1.4.1.post1
+scipy==1.12.0
+semantic-version==2.10.0
+semver==3.0.2
+sentencepiece==0.2.0
+shellingham==1.5.4
+six==1.16.0
+sniffio==1.3.1
+sortedcontainers==2.4.0
+soundfile==0.12.1
+soxr==0.3.7
+speechbrain==1.0.0
+SQLAlchemy==2.0.28
+starlette==0.36.3
+sympy @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_94zd__m8ro/croot/sympy_1701397645431/work
+tabulate==0.9.0
+tensorboardX==2.6.2.2
+threadpoolctl==3.3.0
+tokenizers==0.15.2
+tomlkit==0.12.0
+toolz==0.12.1
+torch==2.0.0
+torch-audiomentations==0.11.1
+torch-pitch-shift==1.2.4
+torchaudio==2.0.0
+torchmetrics==1.3.1
+torchvision==0.15.0
+tqdm==4.66.2
+transformers==4.38.2
+typer==0.9.0
+typing_extensions @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_31f_f02huc/croot/typing_extensions_1705599310686/work
+tzdata==2024.1
+urllib3 @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_cb4f5apn6b/croot/urllib3_1707770574455/work
+uvicorn==0.29.0
+websockets==11.0.3
+Werkzeug==3.0.1
+whisperx @ git+https://github.com/m-bain/whisperx.git@78dcfaab51005aa703ee21375f81ed31bc248560
+xxhash==3.4.1
+yarl==1.9.4
