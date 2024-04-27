@@ -19,6 +19,27 @@ from vad import VadOptions, collect_chunks, get_speech_timestamps
 
 
 class AudioOfficial:
+    def loadmodel(self,model_id, pipeline_name):
+        model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)
+        model.to(self.cuda)
+        processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
+        pip = pipeline(
+        pipeline_name,
+        model=model,
+        tokenizer=processor.tokenizer,
+        feature_extractor=processor.feature_extractor,
+        max_new_tokens=128,
+        chunk_length_s=30,
+        batch_size=16,
+        return_timestamps=True,
+        torch_dtype=self.compute_type,
+        device=self.cuda,
+        )
+        return pip
+        
+        
+        
+        
     def __init__(self, **kwargs):
         
         if torch.cuda.is_available():
@@ -32,25 +53,14 @@ class AudioOfficial:
         self.download_root = kwargs.get("down_nmodel_path", "./models/")
         computer_type = "float32" if self.compute_type == torch.float32 else "float32" #float32"
 #         # "vinai/PhoWhisper-large"
-        self.model_id = "openai/whisper-large-v3"
-        self.loadmodel = AutoModelForSpeechSeq2Seq.from_pretrained(
-    self.model_id, torch_dtype=self.compute_type, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root
-)
-        self.loadmodel.to(self.cuda)
-    
-        self.processor = AutoProcessor.from_pretrained(self.model_id , cache_dir=self.download_root)
-        self.transcriber1 = pipeline(
-        "automatic-speech-recognition",
-        model=self.loadmodel,
-        tokenizer=self.processor.tokenizer,
-        feature_extractor=self.processor.feature_extractor,
-        max_new_tokens=128,
-        chunk_length_s=30,
-        batch_size=16,
-        return_timestamps=True,
-        torch_dtype=self.compute_type,
-        device=self.cuda,
-        )
+        
+        self.transcriber1 = AudioOfficial.loadmodel(self,"openai/whisper-large-v3"  , "automatic-speech-recognition")
+
+        
+        # self.model_id = "vinai/PhoWhisper-large"
+        self.transcriber2 = AudioOfficial.loadmodel(self,"./models/PhoWhisper-large"  , "automatic-speech-recognition")
+        
+        
 
 
         
@@ -60,8 +70,8 @@ class AudioOfficial:
         print("Loading model with device: ", self.devicewhisper , " and compute type: ", computer_type)
         # self.progesspipeline = FlaxWhisperPipline("openai/whisper-large-v3")
 
-        self.transcriber2 = pipeline("automatic-speech-recognition", model="vinai/PhoWhisper-large" , device= self.cuda , return_timestamps=True #,chunk_length_s=30,batch_size=16,return_timestamps=False, max_new_tokens=128,)
-        )
+     #   self.transcriber2 = pipeline("automatic-speech-recognition", model="vinai/PhoWhisper-large" , device= self.cuda , return_timestamps=True #,chunk_length_s=30,batch_size=16,return_timestamps=False, max_new_tokens=128,)
+    #    )
         # self.model = WhisperModel("large-v2" ,download_root=self.download_root, compute_type=computer_type, device=self.devicewhisper ,  num_workers= 4 , cpu_threads = 100)
         
         # self.translator = Translator("seamlessM4T_v2_large", vocoder_name_or_card="vocoder_v2",device=self.cuda , dtype=self.compute_type ,)

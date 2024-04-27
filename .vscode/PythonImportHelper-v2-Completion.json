@@ -30378,7 +30378,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    text1 = \"\"\n    text2 = \"\"\n    Result1 , Result2 = Detect.ExtractText(inputs)\n    for text in Result1 :\n        text1 += f\"{text['text']}. \\n\"\n    for text in Result2 :\n        text2 += f\"{text['text']}. \\n\"",
+        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    start_time = time.time()\n    text1 = \"\"\n    text2 = \"\"\n    Result1 , Result2 = Detect.ExtractText(inputs)\n    for text in Result1 :\n        text1 += f\"{text}. \\n\"\n    for text in Result2 :",
         "detail": "app",
         "documentation": {}
     },
@@ -30414,7 +30414,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class AudioOfficial:\n    def __init__(self, **kwargs):\n        if torch.cuda.is_available():\n            self.cuda = torch.device(\"cuda:0\")\n            self.compute_type=torch.float32\n            self.devicewhisper = \"cuda\"\n        else:\n            self.cuda = torch.device(\"cpu\")\n            self.compute_type=torch.float32\n            self.devicewhisper = \"cpu\"",
+        "peekOfCode": "class AudioOfficial:\n    def loadmodel(self,model_id, pipeline_name):\n        model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)\n        model.to(self.cuda)\n        processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)\n        pip = pipeline(\n        pipeline_name,\n        model=model,\n        tokenizer=processor.tokenizer,\n        feature_extractor=processor.feature_extractor,",
         "detail": "main",
         "documentation": {}
     },
