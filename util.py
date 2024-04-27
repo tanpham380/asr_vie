@@ -25,6 +25,12 @@ def format_text_segments(text_segments):
     formatted_segments = []
     for segment in text_segments:
         start_time, end_time = segment['timestamp']
+        if start_time is None or end_time is None:
+            if start_time is None:
+                start_time= 0.0
+            if end_time is None:
+                end_time = 0.0
+                
         start_time_str = format_timestamp(start_time)
         end_time_str = format_timestamp(end_time)
         formatted_segment = f"[{start_time_str}:{end_time_str}] : {segment['text']}"

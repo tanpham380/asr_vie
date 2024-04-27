@@ -30378,7 +30378,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    start_time = time.time()\n    text1 = \"\"\n    text2 = \"\"\n    Result1 , Result2 = Detect.ExtractText(inputs)\n    for text in Result1 :\n        text1 += f\"{text}. \\n\"\n    for text in Result2 :",
+        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    start_time = time.time()\n    text1 = \"\"\n    text2 = \"\"\n    Result1 , Result2 = Detect.ExtractText(inputs)\n    if Result1 is not None:\n        for text in Result1 :\n            text1 += f\"{text}. \\n\"",
         "detail": "app",
         "documentation": {}
     },
@@ -30423,7 +30423,7 @@
         "kind": 2,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        start_time_str = format_timestamp(start_time)\n        end_time_str = format_timestamp(end_time)\n        formatted_segment = f\"[{start_time_str}:{end_time_str}] : {segment['text']}\"\n        formatted_segments.append(formatted_segment)\n    return formatted_segments\ndef decode_audio(",
+        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        if start_time is None or end_time is None:\n            if start_time is None:\n                start_time= 0.0\n            if end_time is None:\n                end_time = 0.0\n        start_time_str = format_timestamp(start_time)",
         "detail": "util",
         "documentation": {}
     },

@@ -84,10 +84,11 @@ class AudioOfficial:
     def ExtractText(self, path_audio, **kwargs):
         DEFAULT_TARGET_LANGUAGE = "Vietnamese"
         input_audio = decode_audio(path_audio)
+        filtered_audio = input_audio
         
-        filtered_audio = self.filterVAD(input_audio)
+        # filtered_audio = self.filterVAD(input_audio)
         segments_list1 = self.transcriber1(filtered_audio , generate_kwargs={"language": "Vietnamese"})['chunks']
-        segments_list2 = self.transcriber2(filtered_audio , generate_kwargs={"language": "Vietnamese"})['chunks']
+        segments_list2 = self.transcriber2(filtered_audio , generate_kwargs={"language": "Vietnamese"})['text']
         # Resuft = self.progesspipeline(input_audio)
 
         # DEFAULT_TARGET_LANGUAGE = kwargs.get("language", DEFAULT_TARGET_LANGUAGE)
@@ -116,7 +117,7 @@ class AudioOfficial:
         #         # segment_dict["text"] = transcribed_text  # Update the text in the dict
         #     segments_list.append(segment_dict)  # Append the updated dict to the list
         Result1 = format_text_segments(segments_list1)
-        Result2 = format_text_segments(segments_list2)
+        Result2 = segments_list2
         return   Result1, Result2
 
 

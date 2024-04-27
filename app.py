@@ -53,13 +53,16 @@ def transcribe(inputs , task):
     text1 = ""
     text2 = ""
     Result1 , Result2 = Detect.ExtractText(inputs)
-    for text in Result1 :
-        text1 += f"{text}. \n"
-    for text in Result2 :
-        text2 += f"{text}. \n"
+    if Result1 is not None:
+        for text in Result1 :
+            text1 += f"{text}. \n"
+    # if Result2 is not None:
+    #     for text in Result2 :
+    #         text2 += f"{text}. \n"
+    if Result2 is not None:
+        text2 = Result2
     end_time = time.time()
     total_time = f"Transcription took {end_time - start_time:.2f} seconds"
-    print(total_time)
     return  text1 + "\n" + text2 + "\n" + total_time
 
 
