@@ -55,7 +55,7 @@ def transcribe(inputs , task):
         text1 += f"{text['text']}. \n"
     for text in Result2 :
         text2 += f"{text['text']}. \n"
-    return  text1 + "\n " + text2
+    return  text1 
 
 
 
