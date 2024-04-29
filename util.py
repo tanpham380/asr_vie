@@ -25,12 +25,19 @@ def format_text_segments(text_segments):
     formatted_segments = []
     for segment in text_segments:
         start_time, end_time = segment['timestamp']
+
+        
+        
+        
+        
         if start_time is None or end_time is None:
             if start_time is None:
                 start_time= 0.0
             if end_time is None:
                 end_time = 0.0
-                
+        
+        # if end_time - start_time < 0.5:
+        #     continue 
         start_time_str = format_timestamp(start_time)
         end_time_str = format_timestamp(end_time)
         formatted_segment = f"[{start_time_str}:{end_time_str}] : {segment['text']}"
@@ -91,6 +98,9 @@ def decode_audio(
         return left_channel, right_channel
 
     return audio
+
+
+
 def _group_frames(frames, num_samples=None):
     fifo = av.audio.fifo.AudioFifo()
 
@@ -149,13 +159,40 @@ def _ignore_invalid_frames(frames):
 
 
 
-# def crop_audio(audio_tensor, start_time, end_time):
 
-#     audio = AudioSegment.from_file(audio_tensor)
-#     segment = audio[start_time:end_time]
-#     temp_path = "./run/uploads/temporary_audio.wav"
-#     segment.export(temp_path, format="wav")
-#     return temp_path
+def crop_audio(audio_tensor, sample_rate, start_time, end_time):
+  """Crops a segment from the audio tensor.
+
+  Args:
+      audio_tensor: A torch.Tensor containing the audio waveform.
+      sample_rate: The sample rate of the audio in Hz.
+      start_time: The starting time of the segment in seconds.
+      end_time: The ending time of the segment in seconds.
+
+  Returns:
+      A torch.Tensor containing the cropped audio segment.
+  """
+
+  # Convert start and end times to number of samples
+  limit_range = 10000
+  start_sample = int(start_time * sample_rate)
+  end_sample = int(end_time * sample_rate)
+#   if audio_tensor.shape[0] == 0 or audio_tensor.shape[1] == 0:
+#       return None
+  if (end_sample - start_sample) < limit_range:
+        return None
+#   end_sample = min(end_sample, audio_tensor.shape[1])
+
+    # end_sample = min(end_sample, audio_tensor.shape[1])
+
+  
+#    
+
+  # Crop the audio tensor
+  cropped_audio = audio_tensor[start_sample:end_sample]
+
+  return cropped_audio
+
 
 def get_assets_path():
     """Returns the path to the assets directory."""

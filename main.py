@@ -10,8 +10,8 @@ import torch
 # from seamless_communication.inference import Translator
 
 
-from faster_whisper import WhisperModel
-from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+#from faster_whisper import WhisperModel
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline , SeamlessM4Tv2Model
 
 
 from vad import VadOptions, collect_chunks, get_speech_timestamps
@@ -19,10 +19,16 @@ from vad import VadOptions, collect_chunks, get_speech_timestamps
 
 
 class AudioOfficial:
-    def loadmodel(self,model_id, pipeline_name):
-        model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)
+    def loadmodel(self,model_id, pipeline_name , seamless = False):
+        if seamless:
+            model_id = "facebook/seamless-m4t-v2-large"
+            model = SeamlessM4Tv2Model.from_pretrained(model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)
+            processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
+        else:
+            model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)
+            processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
         model.to(self.cuda)
-        processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
+        # processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
         pip = pipeline(
         pipeline_name,
         model=model,
@@ -86,11 +92,12 @@ class AudioOfficial:
         input_audio = decode_audio(path_audio)
         filtered_audio = input_audio
         
-        # filtered_audio = self.filterVAD(input_audio)
+        filtered_audio = self.filterVAD(input_audio)
         segments_list1 = self.transcriber1(filtered_audio , generate_kwargs={"language": "Vietnamese"})['chunks']
         segments_list2 = self.transcriber2(filtered_audio , generate_kwargs={"language": "Vietnamese"})['text']
         # Resuft = self.progesspipeline(input_audio)
-
+        print(segments_list1)
+        print(segments_list2)
         # DEFAULT_TARGET_LANGUAGE = kwargs.get("language", DEFAULT_TARGET_LANGUAGE)
         # target_language_code = LANGUAGE_NAME_TO_CODE[DEFAULT_TARGET_LANGUAGE]
         # text,info = self.model.transcribe(input_audio , beam_size = 1, vad_filter = True , vad_parameters=dict(min_silence_duration_ms=500),
@@ -133,7 +140,7 @@ class AudioOfficial:
             tgt_lang=target_language,
         )
         return str(out_texts[0])
-    def filterVAD(self,audio, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500) , sampling_rate = 16000):
+    def filterVAD(self,audio, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500 , min_speech_duration_ms = 500) , sampling_rate = 16000):
         # duration = audio.shape[0] / sampling_rate
         if vad_filter:
             if vad_parameters is None:

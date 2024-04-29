@@ -17,5 +17,8 @@
         "--line-length=119"
     ],
     "editor.formatOnSave": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "python.analysis.extraPaths": [
+        "./lib/seamless_communication/demo/m4tv2"
+    ]
 }

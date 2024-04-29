@@ -12067,14 +12067,6 @@
         "documentation": {}
     },
     {
-        "label": "WhisperModel",
-        "importPath": "faster_whisper",
-        "description": "faster_whisper",
-        "isExtraImport": true,
-        "detail": "faster_whisper",
-        "documentation": {}
-    },
-    {
         "label": "AutoModelForSpeechSeq2Seq",
         "importPath": "transformers",
         "description": "transformers",
@@ -12092,6 +12084,14 @@
     },
     {
         "label": "pipeline",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "SeamlessM4Tv2Model",
         "importPath": "transformers",
         "description": "transformers",
         "isExtraImport": true,
@@ -30414,7 +30414,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class AudioOfficial:\n    def loadmodel(self,model_id, pipeline_name):\n        model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)\n        model.to(self.cuda)\n        processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)\n        pip = pipeline(\n        pipeline_name,\n        model=model,\n        tokenizer=processor.tokenizer,\n        feature_extractor=processor.feature_extractor,",
+        "peekOfCode": "class AudioOfficial:\n    def loadmodel(self,model_id, pipeline_name , seamless = False):\n        if seamless:\n            model_id = \"facebook/seamless-m4t-v2-large\"\n            model = SeamlessM4Tv2Model.from_pretrained(model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)\n            processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)\n        else:\n            model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)\n            processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)\n        model.to(self.cuda)",
         "detail": "main",
         "documentation": {}
     },
@@ -30423,7 +30423,7 @@
         "kind": 2,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        if start_time is None or end_time is None:\n            if start_time is None:\n                start_time= 0.0\n            if end_time is None:\n                end_time = 0.0\n        start_time_str = format_timestamp(start_time)",
+        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        if start_time is None or end_time is None:\n            if start_time is None:\n                start_time= 0.0\n            if end_time is None:\n                end_time = 0.0\n        # if end_time - start_time < 0.5:",
         "detail": "util",
         "documentation": {}
     },
