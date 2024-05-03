@@ -4159,7 +4159,7 @@
         "documentation": {}
     },
     {
-        "label": "BinaryIO",
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -4168,6 +4168,182 @@
     },
     {
         "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BinaryIO",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "NamedTuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BinaryIO",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "NamedTuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "BinaryIO",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "NamedTuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -12035,7 +12211,159 @@
         "documentation": {}
     },
     {
+        "label": "decode_audio",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "decode_audio",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "convert_segments",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "decode_audio",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "format_text_segments",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "ASR_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
         "label": "LANGUAGE_NAME_TO_CODE",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "S2ST_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "S2TT_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "T2ST_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "T2TT_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "TEXT_SOURCE_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "crop_audio",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "decode_audio",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "ASR_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "decode_audio",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "format_timestamp",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "ASR_TARGET_LANGUAGE_NAMES",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "format_timestamp",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "convert_segments",
         "importPath": "util",
         "description": "util",
         "isExtraImport": true,
@@ -12067,7 +12395,136 @@
         "documentation": {}
     },
     {
+        "label": "Segment",
+        "importPath": "util",
+        "description": "util",
+        "isExtraImport": true,
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "pyannote.audio",
+        "description": "pyannote.audio",
+        "isExtraImport": true,
+        "detail": "pyannote.audio",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "pyannote.audio",
+        "description": "pyannote.audio",
+        "isExtraImport": true,
+        "detail": "pyannote.audio",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "pyannote.audio",
+        "description": "pyannote.audio",
+        "isExtraImport": true,
+        "detail": "pyannote.audio",
+        "documentation": {}
+    },
+    {
+        "label": "DiarizationPipeline",
+        "importPath": "diarize",
+        "description": "diarize",
+        "isExtraImport": true,
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "assign_word_speakers",
+        "importPath": "diarize",
+        "description": "diarize",
+        "isExtraImport": true,
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "DiarizationPipeline",
+        "importPath": "diarize",
+        "description": "diarize",
+        "isExtraImport": true,
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "assign_word_speakers",
+        "importPath": "diarize",
+        "description": "diarize",
+        "isExtraImport": true,
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "DiarizationPipeline",
+        "importPath": "diarize",
+        "description": "diarize",
+        "isExtraImport": true,
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "assign_word_speakers",
+        "importPath": "diarize",
+        "description": "diarize",
+        "isExtraImport": true,
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "gc",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gc",
+        "description": "gc",
+        "detail": "gc",
+        "documentation": {}
+    },
+    {
         "label": "AutoModelForSpeechSeq2Seq",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoProcessor",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AddedToken",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "WhisperTokenizerFast",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "WhisperProcessor",
         "importPath": "transformers",
         "description": "transformers",
         "isExtraImport": true,
@@ -12099,6 +12556,46 @@
         "documentation": {}
     },
     {
+        "label": "AutoModelForSpeechSeq2Seq",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "AutoProcessor",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "WhisperForConditionalGeneration",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "WhisperProcessor",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
         "label": "VadOptions",
         "importPath": "vad",
         "description": "vad",
@@ -12123,20 +12620,85 @@
         "documentation": {}
     },
     {
+        "label": "restore_speech_timestamps",
+        "importPath": "vad",
+        "description": "vad",
+        "isExtraImport": true,
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "VadOptions",
+        "importPath": "vad",
+        "description": "vad",
+        "isExtraImport": true,
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "collect_chunks",
+        "importPath": "vad",
+        "description": "vad",
+        "isExtraImport": true,
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "get_speech_timestamps",
+        "importPath": "vad",
+        "description": "vad",
+        "isExtraImport": true,
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "restore_speech_timestamps",
+        "importPath": "vad",
+        "description": "vad",
+        "isExtraImport": true,
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "whisperx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "whisperx",
+        "description": "whisperx",
+        "detail": "whisperx",
+        "documentation": {}
+    },
+    {
+        "label": "WhisperModel",
+        "importPath": "faster_whisper",
+        "description": "faster_whisper",
+        "isExtraImport": true,
+        "detail": "faster_whisper",
+        "documentation": {}
+    },
+    {
+        "label": "GPUStatCollection",
+        "importPath": "gpustat",
+        "description": "gpustat",
+        "isExtraImport": true,
+        "detail": "gpustat",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
         "label": "AudioSegment",
         "importPath": "pydub",
         "description": "pydub",
         "isExtraImport": true,
         "detail": "pydub",
-        "documentation": {}
-    },
-    {
-        "label": "gc",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "gc",
-        "description": "gc",
-        "detail": "gc",
         "documentation": {}
     },
     {
@@ -30378,7 +30940,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def transcribe(inputs , task):\n    if inputs is None:\n        raise gr.Error(\"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    start_time = time.time()\n    text1 = \"\"\n    text2 = \"\"\n    Result1 , Result2 = Detect.ExtractText(inputs)\n    if Result1 is not None:\n        for text in Result1 :\n            text1 += f\"{text}. \\n\"",
+        "peekOfCode": "def transcribe(inputs, language=\"English\"):\n    if inputs is None:\n        raise gr.Error(\n            \"No audio file submitted! Please upload or record an audio file before submitting your request.\")\n    start_time = time.time()\n    text1 = \"\"\n    text2 = \"\"\n    text3 = ''\n    Result1, Result2, a = Detect.ExtractText(inputs)\n    if Result1 is not None:",
         "detail": "app",
         "documentation": {}
     },
@@ -30405,8 +30967,44 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "file_transcribe = gr.Interface(\n    fn=transcribe,\n    inputs=[\n        gr.Audio(sources=[\"upload\"], type=\"filepath\", label=\"Audio file\" #, max_length = 360\n                 ),\n        # gr.Radio([\"transcribe\", \"translate\"], label=\"Task\", value=\"transcribe\"),\n    ],\n    outputs=\"text\",\n    # theme=\"huggingface\",\n    title=\"Audio to Text\",",
+        "peekOfCode": "file_transcribe = gr.Interface(\n    fn=transcribe,\n    inputs=[\n        gr.Audio(sources=[\"upload\"], type=\"filepath\", label=\"Audio file\"  # , max_length = 360\n                 ),\n        gr.Dropdown(\n            label=\"Target language\",\n            choices=ASR_TARGET_LANGUAGE_NAMES,\n            value=\"English\",\n        )",
         "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "DiarizationPipeline",
+        "kind": 6,
+        "importPath": "diarize",
+        "description": "diarize",
+        "peekOfCode": "class DiarizationPipeline:\n    def __init__(\n        self,\n        model_name=\"pyannote/speaker-diarization-3.1\",\n        use_auth_token=None,\n        device: Optional[Union[str, torch.device]] = \"cpu\",\n    ):\n        if isinstance(device, str):\n            device = torch.device(device)\n        self.model = Pipeline.from_pretrained(",
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "assign_word_speakers",
+        "kind": 2,
+        "importPath": "diarize",
+        "description": "diarize",
+        "peekOfCode": "def assign_word_speakers(diarize_df, transcript_result, fill_nearest=False):\n    transcript_segments = transcript_result[\"segments\"]\n    for seg in transcript_segments:\n        # assign speaker to segment (if any)\n        diarize_df['intersection'] = np.minimum(\n            diarize_df['end'], seg['end']) - np.maximum(diarize_df['start'], seg['start'])\n        diarize_df['union'] = np.maximum(\n            diarize_df['end'], seg['end']) - np.minimum(diarize_df['start'], seg['start'])\n        # remove no hit, otherwise we look for closest (even negative intersection...)\n        if not fill_nearest:",
+        "detail": "diarize",
+        "documentation": {}
+    },
+    {
+        "label": "DiarizationPipeline",
+        "kind": 6,
+        "importPath": "diarize2",
+        "description": "diarize2",
+        "peekOfCode": "class DiarizationPipeline:\n    def __init__(\n        self,\n        model_name=\"pyannote/speaker-diarization-3.1\",\n        use_auth_token=None,\n        device: Optional[Union[str, torch.device]] = \"cpu\",\n    ):\n        if isinstance(device, str):\n            device = torch.device(device)\n        self.model = Pipeline.from_pretrained(",
+        "detail": "diarize2",
+        "documentation": {}
+    },
+    {
+        "label": "assign_word_speakers",
+        "kind": 2,
+        "importPath": "diarize2",
+        "description": "diarize2",
+        "peekOfCode": "def assign_word_speakers(diarize_df, transcript_result, fill_nearest=False):\n    transcript_segments = transcript_result[\"segments\"]\n    for seg in transcript_segments:\n        # assign speaker to segment (if any)\n        diarize_df['intersection'] = np.minimum(\n            diarize_df['end'], seg['end']) - np.maximum(diarize_df['start'], seg['start'])\n        diarize_df['union'] = np.maximum(\n            diarize_df['end'], seg['end']) - np.minimum(diarize_df['start'], seg['start'])\n        # remove no hit, otherwise we look for closest (even negative intersection...)\n        if not fill_nearest:",
+        "detail": "diarize2",
         "documentation": {}
     },
     {
@@ -30414,8 +31012,296 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class AudioOfficial:\n    def loadmodel(self,model_id, pipeline_name , seamless = False):\n        if seamless:\n            model_id = \"facebook/seamless-m4t-v2-large\"\n            model = SeamlessM4Tv2Model.from_pretrained(model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)\n            processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)\n        else:\n            model = AutoModelForSpeechSeq2Seq.from_pretrained( model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=self.download_root)\n            processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)\n        model.to(self.cuda)",
+        "peekOfCode": "class AudioOfficial:\n    def loadmodel(self, model_id, pipeline_name):\n        model = AutoModelForSpeechSeq2Seq.from_pretrained(\n            model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True, cache_dir=self.download_root)\n        processor = AutoProcessor.from_pretrained(\n            model_id, cache_dir=self.download_root)\n        model.to(self.cuda)\n        model.config.forced_decoder_ids = processor.get_decoder_prompt_ids(\n            language=\"vietnamese\", task=\"transcribe\")\n        timestamps = [AddedToken(\"<|%.2f|>\" % (",
         "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "run_asr",
+        "kind": 2,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "def run_asr(input_audio: str, target_language: str) -> str:\n    target_language_code = LANGUAGE_NAME_TO_CODE[target_language]\n    new_arr = decode_audio(input_audio)\n    # input_data = processor(audios = new_arr, sampling_rate=AUDIO_SAMPLE_RATE, return_tensors=\"pt\").to(cuda)\n    # output_tokens = model.generate(**input_data, tgt_lang=target_language_code, generate_speech=False)\n    # finalText = processor.decode(output_tokens[0].tolist()[0], skip_special_tokens=True)\n    diarization = pipeline(input_audio , num_speakers=2 )\n    dictlist = []\n    tmp_speaker = None\n    tmp_start = None",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "AUDIO_SAMPLE_RATE",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "AUDIO_SAMPLE_RATE = 16000.0\nMAX_INPUT_AUDIO_LENGTH = 6000000\ndownload_root = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type=torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_INPUT_AUDIO_LENGTH",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "MAX_INPUT_AUDIO_LENGTH = 6000000\ndownload_root = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type=torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type=torch.float32",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "download_root",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "download_root = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type=torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type=torch.float32\n    devicewhisper = \"cpu\"",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_TARGET_LANGUAGE",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "DEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type=torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type=torch.float32\n    devicewhisper = \"cpu\"\n# device = \"cuda:0\" if torch.cuda.is_available() else \"cpu\"",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "pipeline = Pipeline.from_pretrained(\"pyannote/speaker-diarization-3.1\",\n                                    use_auth_token=\"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\" , cache_dir = download_root)\npipeline.to(cuda)\nmodel_id = \"facebook/seamless-m4t-v2-large\"\nmodel = SeamlessM4Tv2Model.from_pretrained(model_id, torch_dtype=compute_type, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=download_root)\nmodel.to(cuda)\nprocessor = AutoProcessor.from_pretrained(model_id , cache_dir=download_root)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    target_language_code = LANGUAGE_NAME_TO_CODE[target_language]\n    new_arr = decode_audio(input_audio)",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "model_id",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "model_id = \"facebook/seamless-m4t-v2-large\"\nmodel = SeamlessM4Tv2Model.from_pretrained(model_id, torch_dtype=compute_type, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=download_root)\nmodel.to(cuda)\nprocessor = AutoProcessor.from_pretrained(model_id , cache_dir=download_root)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    target_language_code = LANGUAGE_NAME_TO_CODE[target_language]\n    new_arr = decode_audio(input_audio)\n    # input_data = processor(audios = new_arr, sampling_rate=AUDIO_SAMPLE_RATE, return_tensors=\"pt\").to(cuda)\n    # output_tokens = model.generate(**input_data, tgt_lang=target_language_code, generate_speech=False)\n    # finalText = processor.decode(output_tokens[0].tolist()[0], skip_special_tokens=True)",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "model = SeamlessM4Tv2Model.from_pretrained(model_id, torch_dtype=compute_type, low_cpu_mem_usage=True, use_safetensors=True , cache_dir=download_root)\nmodel.to(cuda)\nprocessor = AutoProcessor.from_pretrained(model_id , cache_dir=download_root)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    target_language_code = LANGUAGE_NAME_TO_CODE[target_language]\n    new_arr = decode_audio(input_audio)\n    # input_data = processor(audios = new_arr, sampling_rate=AUDIO_SAMPLE_RATE, return_tensors=\"pt\").to(cuda)\n    # output_tokens = model.generate(**input_data, tgt_lang=target_language_code, generate_speech=False)\n    # finalText = processor.decode(output_tokens[0].tolist()[0], skip_special_tokens=True)\n    diarization = pipeline(input_audio , num_speakers=2 )",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "processor",
+        "kind": 5,
+        "importPath": "python",
+        "description": "python",
+        "peekOfCode": "processor = AutoProcessor.from_pretrained(model_id , cache_dir=download_root)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    target_language_code = LANGUAGE_NAME_TO_CODE[target_language]\n    new_arr = decode_audio(input_audio)\n    # input_data = processor(audios = new_arr, sampling_rate=AUDIO_SAMPLE_RATE, return_tensors=\"pt\").to(cuda)\n    # output_tokens = model.generate(**input_data, tgt_lang=target_language_code, generate_speech=False)\n    # finalText = processor.decode(output_tokens[0].tolist()[0], skip_special_tokens=True)\n    diarization = pipeline(input_audio , num_speakers=2 )\n    dictlist = []\n    tmp_speaker = None",
+        "detail": "python",
+        "documentation": {}
+    },
+    {
+        "label": "run_asr",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def run_asr(input_audio: str, target_language: str) -> str:\n    audio = decode_audio(input_audio)\n    result, _ = model.transcribe(audio)\n    print(\"Transcription successfully!\")\n    segments = list(result)\n    print(segments)\n    gc.collect()\n    torch.cuda.empty_cache()\n    diarize_model = DiarizationPipeline(\n        use_auth_token=\"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\", device=devicewhisper)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "AUDIO_SAMPLE_RATE",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "AUDIO_SAMPLE_RATE = 16000.0\nMAX_INPUT_AUDIO_LENGTH = 6000000\nbatch_size = 16\ndownload_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_INPUT_AUDIO_LENGTH",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "MAX_INPUT_AUDIO_LENGTH = 6000000\nbatch_size = 16\ndownload_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "batch_size",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "batch_size = 16\ndownload_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type = torch.float32",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "download_root_cache",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "download_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type = torch.float32\n    devicewhisper = \"cpu\"",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_TARGET_LANGUAGE",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "DEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type = torch.float32\n    devicewhisper = \"cpu\"\ncomputer_type = \"float32\" if compute_type == torch.float32 else \"float32\"  # float32\"",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "computer_type",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "computer_type = \"float32\" if compute_type == torch.float32 else \"float32\"  # float32\"\ncustom_asr_options = custom_asr_options = {\n    \"max_new_tokens\": 120,\n    # (Add other relevant options for your torch ASR library)\n}\n# model = whisperx.load_model(\"large-v3\", devicewhisper, compute_type=computer_type, download_root=download_root_cache, threads=100,\n#                             asr_options=custom_asr_options\n#                             )\nmodel = WhisperModel(\"large-v3\", device=devicewhisper, compute_type=computer_type,\n                     cpu_threads=100)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "custom_asr_options",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "custom_asr_options = custom_asr_options = {\n    \"max_new_tokens\": 120,\n    # (Add other relevant options for your torch ASR library)\n}\n# model = whisperx.load_model(\"large-v3\", devicewhisper, compute_type=computer_type, download_root=download_root_cache, threads=100,\n#                             asr_options=custom_asr_options\n#                             )\nmodel = WhisperModel(\"large-v3\", device=devicewhisper, compute_type=computer_type,\n                     cpu_threads=100)\ndef run_asr(input_audio: str, target_language: str) -> str:",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "model = WhisperModel(\"large-v3\", device=devicewhisper, compute_type=computer_type,\n                     cpu_threads=100)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    audio = decode_audio(input_audio)\n    result, _ = model.transcribe(audio)\n    print(\"Transcription successfully!\")\n    segments = list(result)\n    print(segments)\n    gc.collect()\n    torch.cuda.empty_cache()",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "run_asr",
+        "kind": 2,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "def run_asr(input_audio: str, target_language: str) -> str:\n    gc.collect()\n    torch.cuda.empty_cache()\n    result = model.transcribe(\n        input_audio, batch_size=batch_size, print_progress=False, chunk_size=10)\n    diarize_segments = diarize_model(input_audio, max_speakers=2)\n    result = whisperx.assign_word_speakers(\n        diarize_segments, result)\n    print(result)\n    gc.collect()",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "AUDIO_SAMPLE_RATE",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "AUDIO_SAMPLE_RATE = 16000.0\nMAX_INPUT_AUDIO_LENGTH = 6000000\nbatch_size = 16\ndownload_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_INPUT_AUDIO_LENGTH",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "MAX_INPUT_AUDIO_LENGTH = 6000000\nbatch_size = 16\ndownload_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "batch_size",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "batch_size = 16\ndownload_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type = torch.float32",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "download_root_cache",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "download_root_cache = \"/home/gitlab/asr/models/\"\nDEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type = torch.float32\n    devicewhisper = \"cpu\"",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_TARGET_LANGUAGE",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "DEFAULT_TARGET_LANGUAGE = \"English\"\nif torch.cuda.is_available():\n    cuda = torch.device(\"cuda:0\")\n    compute_type = torch.float16\n    devicewhisper = \"cuda\"\nelse:\n    cuda = torch.device(\"cpu\")\n    compute_type = torch.float32\n    devicewhisper = \"cpu\"\ncomputer_type = \"float32\" if compute_type == torch.float32 else \"float32\"  # float32\"",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "computer_type",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "computer_type = \"float32\" if compute_type == torch.float32 else \"float32\"  # float32\"\ncustom_asr_options = custom_asr_options = {\n    \"max_new_tokens\": 120,\n    # (Add other relevant options for your torch ASR library)\n}\nmodel = whisperx.load_model(\"large-v2\", devicewhisper, compute_type=computer_type, download_root=download_root_cache, threads=100,\n                            asr_options=custom_asr_options\n                            )\ndiarize_model = whisperx.DiarizationPipeline(\n    use_auth_token=\"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\", device=devicewhisper)",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "custom_asr_options",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "custom_asr_options = custom_asr_options = {\n    \"max_new_tokens\": 120,\n    # (Add other relevant options for your torch ASR library)\n}\nmodel = whisperx.load_model(\"large-v2\", devicewhisper, compute_type=computer_type, download_root=download_root_cache, threads=100,\n                            asr_options=custom_asr_options\n                            )\ndiarize_model = whisperx.DiarizationPipeline(\n    use_auth_token=\"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\", device=devicewhisper)\ndef run_asr(input_audio: str, target_language: str) -> str:",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "model = whisperx.load_model(\"large-v2\", devicewhisper, compute_type=computer_type, download_root=download_root_cache, threads=100,\n                            asr_options=custom_asr_options\n                            )\ndiarize_model = whisperx.DiarizationPipeline(\n    use_auth_token=\"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\", device=devicewhisper)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    gc.collect()\n    torch.cuda.empty_cache()\n    result = model.transcribe(\n        input_audio, batch_size=batch_size, print_progress=False, chunk_size=10)",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "diarize_model",
+        "kind": 5,
+        "importPath": "test2",
+        "description": "test2",
+        "peekOfCode": "diarize_model = whisperx.DiarizationPipeline(\n    use_auth_token=\"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\", device=devicewhisper)\ndef run_asr(input_audio: str, target_language: str) -> str:\n    gc.collect()\n    torch.cuda.empty_cache()\n    result = model.transcribe(\n        input_audio, batch_size=batch_size, print_progress=False, chunk_size=10)\n    diarize_segments = diarize_model(input_audio, max_speakers=2)\n    result = whisperx.assign_word_speakers(\n        diarize_segments, result)",
+        "detail": "test2",
+        "documentation": {}
+    },
+    {
+        "label": "AudioOfficial",
+        "kind": 6,
+        "importPath": "test3",
+        "description": "test3",
+        "peekOfCode": "class AudioOfficial:\n    def loadmodel(self, model_id, pipeline_name):\n        model = AutoModelForSpeechSeq2Seq.from_pretrained(\n            # , use_flash_attention_2=True\n            model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True, cache_dir=self.download_root\n        )\n        processor = AutoProcessor.from_pretrained(\n            model_id, cache_dir=self.download_root, )\n        # model = model.to_bettertransformer()\n        model.to(self.cuda)",
+        "detail": "test3",
+        "documentation": {}
+    },
+    {
+        "label": "Word",
+        "kind": 6,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "class Word(NamedTuple):\n    start: float\n    end: float\n    word: str\n    probability: float\nclass Segment(NamedTuple):\n    id: int\n    seek: int\n    start: float\n    end: float",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "Segment",
+        "kind": 6,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "class Segment(NamedTuple):\n    id: int\n    seek: int\n    start: float\n    end: float\n    text: str\n    tokens: List[int]\n    temperature: float\n    avg_logprob: float\n    compression_ratio: float",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "convert_segments",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def convert_segments(data):\n    \"\"\"Converts a list of speech segments to a JSON object with 'segments' key.\n    Args:\n        data: A list of dictionaries, where each dictionary represents a speech segment\n              with keys 'text', 'timestamp'. 'timestamp' is a tuple of (start, end) times.\n    Returns:\n        A dictionary with a key 'segments' containing a list of segment objects. Each segment\n        object has keys 'text', 'start', and 'end'.\n    \"\"\"\n    converted_data = {\"segments\": []}",
+        "detail": "util",
         "documentation": {}
     },
     {
@@ -30423,7 +31309,7 @@
         "kind": 2,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        if start_time is None or end_time is None:\n            if start_time is None:\n                start_time= 0.0\n            if end_time is None:\n                end_time = 0.0\n        # if end_time - start_time < 0.5:",
+        "peekOfCode": "def format_text_segments(text_segments):\n    formatted_segments = []\n    for segment in text_segments:\n        start_time, end_time = segment['timestamp']\n        if start_time is None or end_time is None:\n            if start_time is None:\n                start_time = 0.0\n            if end_time is None:\n                end_time = 0.0\n        # if end_time - start_time < 0.5:",
         "detail": "util",
         "documentation": {}
     },
@@ -30433,6 +31319,15 @@
         "importPath": "util",
         "description": "util",
         "peekOfCode": "def decode_audio(\n    input_file: Union[str, BinaryIO],\n    sampling_rate: int = 16000,\n    split_stereo: bool = False,\n):\n    \"\"\"Decodes the audio.\n    Args:\n      input_file: Path to the input file or a file-like object.\n      sampling_rate: Resample the audio to this sample rate.\n      split_stereo: Return separate left and right channels.",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "crop_audio",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def crop_audio(audio_tensor, sample_rate, start_time, end_time):\n    \"\"\"Crops a segment from the audio tensor.\n    Args:\n        audio_tensor: A torch.Tensor containing the audio waveform.\n        sample_rate: The sample rate of the audio in Hz.\n        start_time: The starting time of the segment in seconds.\n        end_time: The ending time of the segment in seconds.\n    Returns:\n        A torch.Tensor containing the cropped audio segment.\n    \"\"\"",
         "detail": "util",
         "documentation": {}
     },
@@ -30451,6 +31346,51 @@
         "importPath": "util",
         "description": "util",
         "peekOfCode": "def format_timestamp(\n    seconds: float,\n    always_include_hours: bool = False,\n    decimal_marker: str = \".\",\n) -> str:\n    assert seconds >= 0, \"non-negative timestamp expected\"\n    milliseconds = round(seconds * 1000.0)\n    hours = milliseconds // 3_600_000\n    milliseconds -= hours * 3_600_000\n    minutes = milliseconds // 60_000",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "update_gpu_status",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def update_gpu_status():\n    if torch.cuda.is_available() == False:\n        return \"No Nvidia Device\"\n    try:\n        gpu_stats = GPUStatCollection.new_query()\n        for gpu in gpu_stats:\n            # Assuming you want to monitor the first GPU, index 0\n            gpu_id = gpu.index\n            gpu_name = gpu.name\n            gpu_utilization = gpu.utilization",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "torch_update_gpu_status",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def torch_update_gpu_status():\n    if torch.cuda.is_available():\n        gpu_info = torch.cuda.get_device_name(0)\n        gpu_memory = torch.cuda.mem_get_info(0)\n        total_memory = gpu_memory[1] / (1024 * 1024)\n        free_memory = gpu_memory[0] / (1024 * 1024)\n        used_memory = (gpu_memory[1] - gpu_memory[0]) / (1024 * 1024)\n        gpu_status = f\"GPU: {gpu_info} Free Memory:{free_memory}MB   Total Memory: {total_memory:.2f} MB  Used Memory: {used_memory:.2f} MB\"\n    else:\n        gpu_status = \"No GPU available\"",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "update_cpu_status",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def update_cpu_status():\n    import datetime\n    # Get the current time\n    current_time = datetime.datetime.now().time()\n    # Convert the time to a string\n    time_str = current_time.strftime(\"%H:%M:%S\")\n    cpu_percent = psutil.cpu_percent()\n    cpu_status = f\"CPU Usage: {cpu_percent}% {time_str}\"\n    return cpu_status\ndef update_status():",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "update_status",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def update_status():\n    gpu_status = update_gpu_status()\n    cpu_status = update_cpu_status()\n    sys_status = gpu_status+\"\\n\\n\"+cpu_status\n    return sys_status\ndef refresh_status():\n    return update_status()\nlanguage_code_to_name = {\n    \"afr\": \"Afrikaans\",\n    \"amh\": \"Amharic\",",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "refresh_status",
+        "kind": 2,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "def refresh_status():\n    return update_status()\nlanguage_code_to_name = {\n    \"afr\": \"Afrikaans\",\n    \"amh\": \"Amharic\",\n    \"arb\": \"Modern Standard Arabic\",\n    \"ary\": \"Moroccan Arabic\",\n    \"arz\": \"Egyptian Arabic\",\n    \"asm\": \"Assamese\",\n    \"ast\": \"Asturian\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30486,7 +31426,7 @@
         "kind": 5,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "TEXT_SOURCE_LANGUAGE_NAMES = sorted([language_code_to_name[code] for code in text_source_language_codes])\n# Target langs:\n# S2ST / T2ST\ns2st_target_language_codes = [\n    \"eng\",\n    \"arb\",\n    \"ben\",\n    \"cat\",\n    \"ces\",\n    \"cmn\",",
+        "peekOfCode": "TEXT_SOURCE_LANGUAGE_NAMES = sorted(\n    [language_code_to_name[code] for code in text_source_language_codes])\n# Target langs:\n# S2ST / T2ST\ns2st_target_language_codes = [\n    \"eng\",\n    \"arb\",\n    \"ben\",\n    \"cat\",\n    \"ces\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30504,7 +31444,7 @@
         "kind": 5,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "S2ST_TARGET_LANGUAGE_NAMES = sorted([language_code_to_name[code] for code in s2st_target_language_codes])\nT2ST_TARGET_LANGUAGE_NAMES = S2ST_TARGET_LANGUAGE_NAMES\n# S2TT / T2TT / ASR\nS2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nT2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES",
+        "peekOfCode": "S2ST_TARGET_LANGUAGE_NAMES = sorted(\n    [language_code_to_name[code] for code in s2st_target_language_codes])\nT2ST_TARGET_LANGUAGE_NAMES = S2ST_TARGET_LANGUAGE_NAMES\n# S2TT / T2TT / ASR\nS2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nT2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\n_LANGUAGE_CODES = (\n    \"af\",\n    \"am\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30513,7 +31453,7 @@
         "kind": 5,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "T2ST_TARGET_LANGUAGE_NAMES = S2ST_TARGET_LANGUAGE_NAMES\n# S2TT / T2TT / ASR\nS2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nT2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES",
+        "peekOfCode": "T2ST_TARGET_LANGUAGE_NAMES = S2ST_TARGET_LANGUAGE_NAMES\n# S2TT / T2TT / ASR\nS2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nT2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\n_LANGUAGE_CODES = (\n    \"af\",\n    \"am\",\n    \"ar\",\n    \"as\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30522,7 +31462,7 @@
         "kind": 5,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "S2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nT2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES",
+        "peekOfCode": "S2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nT2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\n_LANGUAGE_CODES = (\n    \"af\",\n    \"am\",\n    \"ar\",\n    \"as\",\n    \"az\",\n    \"ba\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30531,7 +31471,7 @@
         "kind": 5,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "T2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES",
+        "peekOfCode": "T2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\nASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\n_LANGUAGE_CODES = (\n    \"af\",\n    \"am\",\n    \"ar\",\n    \"as\",\n    \"az\",\n    \"ba\",\n    \"be\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30540,7 +31480,16 @@
         "kind": 5,
         "importPath": "util",
         "description": "util",
-        "peekOfCode": "ASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES",
+        "peekOfCode": "ASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES\n_LANGUAGE_CODES = (\n    \"af\",\n    \"am\",\n    \"ar\",\n    \"as\",\n    \"az\",\n    \"ba\",\n    \"be\",\n    \"bg\",",
+        "detail": "util",
+        "documentation": {}
+    },
+    {
+        "label": "_LANGUAGE_CODES",
+        "kind": 5,
+        "importPath": "util",
+        "description": "util",
+        "peekOfCode": "_LANGUAGE_CODES = (\n    \"af\",\n    \"am\",\n    \"ar\",\n    \"as\",\n    \"az\",\n    \"ba\",\n    \"be\",\n    \"bg\",\n    \"bn\",",
         "detail": "util",
         "documentation": {}
     },
@@ -30585,7 +31534,16 @@
         "kind": 2,
         "importPath": "vad",
         "description": "vad",
-        "peekOfCode": "def collect_chunks(audio: np.ndarray, chunks: List[dict]) -> np.ndarray:\n    \"\"\"Collects and concatenates audio chunks.\"\"\"\n    if not chunks:\n        return np.array([], dtype=np.float32)\n    return np.concatenate([audio[chunk[\"start\"] : chunk[\"end\"]] for chunk in chunks])\nclass SpeechTimestampsMap:\n    \"\"\"Helper class to restore original speech timestamps.\"\"\"\n    def __init__(self, chunks: List[dict], sampling_rate: int, time_precision: int = 2):\n        self.sampling_rate = sampling_rate\n        self.time_precision = time_precision",
+        "peekOfCode": "def collect_chunks(audio: np.ndarray, chunks: List[dict]) -> np.ndarray:\n    \"\"\"Collects and concatenates audio chunks.\"\"\"\n    if not chunks:\n        return np.array([], dtype=np.float32)\n    return np.concatenate([audio[chunk[\"start\"]: chunk[\"end\"]] for chunk in chunks])\ndef restore_speech_timestamps(\n    segments: Iterable[Segment],\n    speech_chunks: List[dict],\n    sampling_rate: int,\n) -> Iterable[Segment]:",
+        "detail": "vad",
+        "documentation": {}
+    },
+    {
+        "label": "restore_speech_timestamps",
+        "kind": 2,
+        "importPath": "vad",
+        "description": "vad",
+        "peekOfCode": "def restore_speech_timestamps(\n    segments: Iterable[Segment],\n    speech_chunks: List[dict],\n    sampling_rate: int,\n) -> Iterable[Segment]:\n    ts_map = SpeechTimestampsMap(speech_chunks, sampling_rate)\n    for segment in segments:\n        if segment.words:\n            words = []\n            for word in segment.words:",
         "detail": "vad",
         "documentation": {}
     },

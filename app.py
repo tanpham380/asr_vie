@@ -4,6 +4,8 @@ from main import AudioOfficial
 
 import logging
 import gradio as gr
+
+from util import ASR_TARGET_LANGUAGE_NAMES
 # swagger = Swagger(app)
 
 # app = Flask(__name__)
@@ -14,7 +16,6 @@ import gradio as gr
 
 # def allowed_file(filename):
 #     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 
 # @app.route("/")
@@ -38,35 +39,30 @@ import gradio as gr
 #         return jsonify(json)
 #     else:
 #         return jsonify({'error': 'Invalid file type'}), 402
-    
 
 
-
-
-
-
-
-def transcribe(inputs , task):
+def transcribe(inputs, language="English"):
     if inputs is None:
-        raise gr.Error("No audio file submitted! Please upload or record an audio file before submitting your request.")
+        raise gr.Error(
+            "No audio file submitted! Please upload or record an audio file before submitting your request.")
     start_time = time.time()
     text1 = ""
     text2 = ""
-    Result1 , Result2 = Detect.ExtractText(inputs)
+    text3 = ''
+    Result1, Result2, a = Detect.ExtractText(inputs)
     if Result1 is not None:
-        for text in Result1 :
+        for text in Result1:
             text1 += f"{text}. \n"
     # if Result2 is not None:
     #     for text in Result2 :
     #         text2 += f"{text}. \n"
     if Result2 is not None:
         text2 = Result2
+    for key, value in a.items():
+        text3 += f"{key}: {value}"
     end_time = time.time()
     total_time = f"Transcription took {end_time - start_time:.2f} seconds"
-    return  text1 + "\n" + text2 + "\n" + total_time
-
-
-
+    return text1 + "\n" + text2 + "\n" + total_time + "\n" + text3
 
 
 demo = gr.Blocks()
@@ -76,6 +72,7 @@ mf_transcribe = gr.Interface(
     inputs=[
         gr.Audio(sources=["microphone"], type="filepath"),
         # gr.Radio(["transcribe", "translate"], label="Task", value="transcribe"),
+
     ],
     outputs="text",
     # theme="huggingface",
@@ -87,13 +84,16 @@ mf_transcribe = gr.Interface(
 )
 
 
-
-
 file_transcribe = gr.Interface(
     fn=transcribe,
     inputs=[
-        gr.Audio(sources=["upload"], type="filepath", label="Audio file" #, max_length = 360
+        gr.Audio(sources=["upload"], type="filepath", label="Audio file"  # , max_length = 360
                  ),
+        gr.Dropdown(
+            label="Target language",
+            choices=ASR_TARGET_LANGUAGE_NAMES,
+            value="English",
+        )
 
 
         # gr.Radio(["transcribe", "translate"], label="Task", value="transcribe"),
@@ -108,15 +108,33 @@ file_transcribe = gr.Interface(
 )
 
 
-
 # setup model
 with demo:
-    gr.TabbedInterface([file_transcribe, mf_transcribe], ["Audio file","Microphone"], title = "Audio")
+    gr.TabbedInterface([file_transcribe, mf_transcribe], [
+                       "Audio file", "Microphone"], title="Audio")
 
 
+# with demo:
+#     gr.TabbedInterface([mf_transcribe, ], ["Audio",])
+
+#     with gr.Row():
+#         refresh_button = gr.Button("Refresh Status")  # Create a refresh button
+
+#     sys_status_output = gr.Textbox(label="System Status", interactive=False)
+
+
+#     # Link the refresh button to the refresh_status function
+#     refresh_button.click(refresh_status, None, [sys_status_output])
+
+#     # Load the initial status using update_status function
+#     demo.load(update_status, inputs=None, outputs=[sys_status_output], every=2, queue=False)
+
+#     graudio.stop_recording(handle_upload_audio,inputs=[graudio,grmodel_textbox,groutputs[0]],outputs=groutputs)
+#     graudio.upload(handle_upload_audio,inputs=[graudio,grmodel_textbox,groutputs[0]],outputs=groutputs)
 if __name__ == '__main__':
     Detect = AudioOfficial(
-        down_nmodel_path = "./models/" ,
+        down_nmodel_path="./models/",
+        # vadfilter=None,
     )
     logging.basicConfig(
         filename='waitress.log',
@@ -130,4 +148,4 @@ if __name__ == '__main__':
                 # ssl_certfile="cer/172.18.249.222.crt",
                 # ssl_keyfile="cer/172.18.249.222.key",
                 )
-        # serve(app, host='0.0.0.0', port=5000 , )
+    # serve(app, host='0.0.0.0', port=5000 , )

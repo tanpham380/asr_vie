@@ -3,12 +3,11 @@ import functools
 import os
 import warnings
 
-from typing import List, NamedTuple, Optional
+from typing import Iterable, List, NamedTuple, Optional
 
 import numpy as np
 
-from util import get_assets_path
-
+from util import get_assets_path, Segment
 
 
 # The code below is adapted from https://github.com/snakers4/silero-vad.
@@ -33,7 +32,7 @@ class VadOptions(NamedTuple):
     """
 
     threshold: float = 0.5
-    min_speech_duration_ms: int = 250
+    min_speech_duration_ms: int = 500
     max_speech_duration_s: float = float("inf")
     min_silence_duration_ms: int = 2000
     window_size_samples: int = 1024
@@ -89,7 +88,8 @@ def get_speech_timestamps(
 
     speech_probs = []
     for current_start_sample in range(0, audio_length_samples, window_size_samples):
-        chunk = audio[current_start_sample : current_start_sample + window_size_samples]
+        chunk = audio[current_start_sample: current_start_sample +
+                      window_size_samples]
         if len(chunk) < window_size_samples:
             chunk = np.pad(chunk, (0, int(window_size_samples - len(chunk))))
         speech_prob, state = model(chunk, state, sampling_rate)
@@ -176,7 +176,8 @@ def get_speech_timestamps(
                 )
             else:
                 speech["end"] = int(
-                    min(audio_length_samples, speech["end"] + speech_pad_samples)
+                    min(audio_length_samples,
+                        speech["end"] + speech_pad_samples)
                 )
                 speeches[i + 1]["start"] = int(
                     max(0, speeches[i + 1]["start"] - speech_pad_samples)
@@ -194,7 +195,42 @@ def collect_chunks(audio: np.ndarray, chunks: List[dict]) -> np.ndarray:
     if not chunks:
         return np.array([], dtype=np.float32)
 
-    return np.concatenate([audio[chunk["start"] : chunk["end"]] for chunk in chunks])
+    return np.concatenate([audio[chunk["start"]: chunk["end"]] for chunk in chunks])
+
+
+def restore_speech_timestamps(
+    segments: Iterable[Segment],
+    speech_chunks: List[dict],
+    sampling_rate: int,
+) -> Iterable[Segment]:
+    ts_map = SpeechTimestampsMap(speech_chunks, sampling_rate)
+
+    for segment in segments:
+        if segment.words:
+            words = []
+            for word in segment.words:
+                # Ensure the word start and end times are resolved to the same chunk.
+                middle = (word.start + word.end) / 2
+                chunk_index = ts_map.get_chunk_index(middle)
+                word = word._replace(
+                    start=ts_map.get_original_time(word.start, chunk_index),
+                    end=ts_map.get_original_time(word.end, chunk_index),
+                )
+                words.append(word)
+
+            segment = segment._replace(
+                start=words[0].start,
+                end=words[-1].end,
+                words=words,
+            )
+
+        else:
+            segment = segment._replace(
+                start=ts_map.get_original_time(segment.start),
+                end=ts_map.get_original_time(segment.end),
+            )
+
+        yield segment
 
 
 class SpeechTimestampsMap:

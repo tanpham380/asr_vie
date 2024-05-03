@@ -14,7 +14,7 @@ import gc
 
 
 # from faster_whisper import WhisperModel
-from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline, AddedToken, WhisperTokenizerFast, WhisperProcessor
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline, WhisperForConditionalGeneration, WhisperProcessor
 
 from vad import VadOptions, collect_chunks, get_speech_timestamps, restore_speech_timestamps
 
@@ -24,15 +24,15 @@ class AudioOfficial:
     def loadmodel(self, model_id, pipeline_name):
 
         model = AutoModelForSpeechSeq2Seq.from_pretrained(
-            model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True, cache_dir=self.download_root)
+            # , use_flash_attention_2=True
+            model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True, cache_dir=self.download_root
+
+        )
         processor = AutoProcessor.from_pretrained(
-            model_id, cache_dir=self.download_root)
+            model_id, cache_dir=self.download_root, )
+        # model = model.to_bettertransformer()
+
         model.to(self.cuda)
-        model.config.forced_decoder_ids = processor.get_decoder_prompt_ids(
-            language="vietnamese", task="transcribe")
-        timestamps = [AddedToken("<|%.2f|>" % (
-            i * 0.02), lstrip=False, rstrip=False) for i in range(1500 + 1)]
-        processor.tokenizer.add_tokens(timestamps)
 
         # processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
         pip = pipeline(
@@ -41,7 +41,7 @@ class AudioOfficial:
             tokenizer=processor.tokenizer,
             feature_extractor=processor.feature_extractor,
             max_new_tokens=128,
-            chunk_length_s=30,
+            # chunk_length_s=30,
             batch_size=16,
             return_timestamps=True,
             torch_dtype=self.compute_type,
@@ -106,10 +106,8 @@ class AudioOfficial:
         filtered_audio, speech_chunks = self.filterVAD(input_audio)
         segments_list1 = self.transcriber1(filtered_audio, generate_kwargs={
                                            "language": "Vietnamese"})
-        print(segments_list1)
-
-        # restore speech timestamps
-        print(f"chunks: {segments_list1['chunks']}",)
+        segments_list2 = self.transcriber2(filtered_audio, generate_kwargs={
+                                           "language": "Vietnamese"})['text']
         segments = None
         if speech_chunks:
             segments = restore_speech_timestamps(
@@ -129,11 +127,18 @@ class AudioOfficial:
         result = assign_word_speakers(
             diarize_segments, converted_json)
         print(result)
-
         Result1 = format_text_segments(segments_list1['chunks'])
+        Result2 = segments_list2
+        return Result1, Result2, converted_json
 
-        segments_list2 = self.transcriber2(filtered_audio, generate_kwargs={
-                                           "language": "Vietnamese"})
+    def run_asr_facebook(self, input_audio: str, target_language: str) -> str:
+        out_texts, _ = self.translator.predict(
+            input=input_audio,
+            task_str="ASR",
+            src_lang=target_language,
+            tgt_lang=target_language,
+        )
+        return str(out_texts[0])
 
     def filterVAD(self, audio, vad_filter: bool = True, vad_parameters: Optional[Union[dict, VadOptions]] = None, sampling_rate=16000, clip_timestamps=0):
         duration = audio.shape[0] / sampling_rate
@@ -148,8 +153,6 @@ class AudioOfficial:
             audio = collect_chunks(audio, speech_chunks)
             duration_after_vad = audio.shape[0] / sampling_rate
             print("Duration after VAD: ", duration_after_vad)
-            print("test")
-            print(speech_chunks)
             return audio, speech_chunks
         else:
             return audio, None

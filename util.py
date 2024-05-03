@@ -1,15 +1,66 @@
+from gpustat import GPUStatCollection
 import os
+import psutil
 import torchaudio
 from pydub import AudioSegment
 import tempfile
 import gc
 import io
+import torch
 
-from typing import BinaryIO, Union
+from typing import BinaryIO, List, Optional, Union, NamedTuple
 import itertools
 import av
 import numpy as np
 
+
+class Word(NamedTuple):
+    start: float
+    end: float
+    word: str
+    probability: float
+
+
+class Segment(NamedTuple):
+    id: int
+    seek: int
+    start: float
+    end: float
+    text: str
+    tokens: List[int]
+    temperature: float
+    avg_logprob: float
+    compression_ratio: float
+    no_speech_prob: float
+    words: Optional[List[Word]]
+
+
+def convert_segments(data):
+    """Converts a list of speech segments to a JSON object with 'segments' key.
+
+    Args:
+        data: A list of dictionaries, where each dictionary represents a speech segment
+              with keys 'text', 'timestamp'. 'timestamp' is a tuple of (start, end) times.
+
+    Returns:
+        A dictionary with a key 'segments' containing a list of segment objects. Each segment
+        object has keys 'text', 'start', and 'end'.
+    """
+    converted_data = {"segments": []}
+    for segment in data:
+        text = segment["text"]
+        # Use 0.0 as default if timestamp is missing
+        start = segment.get("timestamp", (0.0,))[0]
+        # Use 0.0 as default if timestamp is missing
+        end = segment.get("timestamp", (0.0,))[1]
+        if end is not None:  # Only add segment if end is not None
+            segment_obj = {
+                "text": text,
+                "start": round(start, 3),
+                "end": round(end, 3)
+            }
+            converted_data["segments"].append(segment_obj)
+    return converted_data
 
 # def clearFolderContent(folder_path):
 #     # Function to clear contents of a folder
@@ -20,29 +71,27 @@ import numpy as np
 #                 os.unlink(file_path)
 #         except Exception as e:
 #             print(f"Failed to delete {file_path}. Reason: {e}")
-            
+
+
 def format_text_segments(text_segments):
     formatted_segments = []
     for segment in text_segments:
         start_time, end_time = segment['timestamp']
 
-        
-        
-        
-        
         if start_time is None or end_time is None:
             if start_time is None:
-                start_time= 0.0
+                start_time = 0.0
             if end_time is None:
                 end_time = 0.0
-        
+
         # if end_time - start_time < 0.5:
-        #     continue 
+        #     continue
         start_time_str = format_timestamp(start_time)
         end_time_str = format_timestamp(end_time)
         formatted_segment = f"[{start_time_str}:{end_time_str}] : {segment['text']}"
         formatted_segments.append(formatted_segment)
     return formatted_segments
+
 
 def decode_audio(
     input_file: Union[str, BinaryIO],
@@ -100,7 +149,6 @@ def decode_audio(
     return audio
 
 
-
 def _group_frames(frames, num_samples=None):
     fifo = av.audio.fifo.AudioFifo()
 
@@ -119,6 +167,7 @@ def _resample_frames(frames, resampler):
     # Add None to flush the resampler.
     for frame in itertools.chain(frames, [None]):
         yield from resampler.resample(frame)
+
 
 def _ignore_invalid_frames(frames):
     iterator = iter(frames)
@@ -143,7 +192,7 @@ def _ignore_invalid_frames(frames):
 #     if arr.size(0) > 1:  # convert dual to mono channel
 #         arr = arr.mean(dim=0, keepdim=True)
 #     new_arr = torchaudio.functional.resample(arr, orig_freq=org_sr, new_freq=16000)
-    
+
 #     if output_path is None or output_path == "":
 #         # Save to a temporary file
 #         with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as tmp_file:
@@ -153,50 +202,48 @@ def _ignore_invalid_frames(frames):
 #         # Save to the provided output path
 #         output_path = os.path.join(output_path, os.path.basename(input_audio))
 #         torchaudio.save(output_path, new_arr, sample_rate=16000)
-        
+
 #     return output_path, a
 
 
-
-
-
 def crop_audio(audio_tensor, sample_rate, start_time, end_time):
-  """Crops a segment from the audio tensor.
+    """Crops a segment from the audio tensor.
 
-  Args:
-      audio_tensor: A torch.Tensor containing the audio waveform.
-      sample_rate: The sample rate of the audio in Hz.
-      start_time: The starting time of the segment in seconds.
-      end_time: The ending time of the segment in seconds.
+    Args:
+        audio_tensor: A torch.Tensor containing the audio waveform.
+        sample_rate: The sample rate of the audio in Hz.
+        start_time: The starting time of the segment in seconds.
+        end_time: The ending time of the segment in seconds.
 
-  Returns:
-      A torch.Tensor containing the cropped audio segment.
-  """
+    Returns:
+        A torch.Tensor containing the cropped audio segment.
+    """
 
-  # Convert start and end times to number of samples
-  limit_range = 10000
-  start_sample = int(start_time * sample_rate)
-  end_sample = int(end_time * sample_rate)
+    # Convert start and end times to number of samples
+    limit_range = 10000
+    start_sample = int(start_time * sample_rate)
+    end_sample = int(end_time * sample_rate)
 #   if audio_tensor.shape[0] == 0 or audio_tensor.shape[1] == 0:
 #       return None
-  if (end_sample - start_sample) < limit_range:
+    if (end_sample - start_sample) < limit_range:
         return None
 #   end_sample = min(end_sample, audio_tensor.shape[1])
 
     # end_sample = min(end_sample, audio_tensor.shape[1])
 
-  
-#    
 
-  # Crop the audio tensor
-  cropped_audio = audio_tensor[start_sample:end_sample]
+#
 
-  return cropped_audio
+    # Crop the audio tensor
+    cropped_audio = audio_tensor[start_sample:end_sample]
+
+    return cropped_audio
 
 
 def get_assets_path():
     """Returns the path to the assets directory."""
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+
 
 def format_timestamp(
     seconds: float,
@@ -219,6 +266,66 @@ def format_timestamp(
     return (
         f"{hours_marker}{minutes:02d}:{seconds:02d}{decimal_marker}{milliseconds:03d}"
     )
+
+
+def update_gpu_status():
+    if torch.cuda.is_available() == False:
+        return "No Nvidia Device"
+    try:
+        gpu_stats = GPUStatCollection.new_query()
+        for gpu in gpu_stats:
+            # Assuming you want to monitor the first GPU, index 0
+            gpu_id = gpu.index
+            gpu_name = gpu.name
+            gpu_utilization = gpu.utilization
+            memory_used = gpu.memory_used
+            memory_total = gpu.memory_total
+            memory_utilization = (memory_used / memory_total) * 100
+            gpu_status = (
+                f"GPU {gpu_id}: {gpu_name}, Utilization: {gpu_utilization}%, Memory Used: {memory_used}MB, Memory Total: {memory_total}MB, Memory Utilization: {memory_utilization:.2f}%")
+            return gpu_status
+
+    except Exception as e:
+        print(f"Error getting GPU stats: {e}")
+        return torch_update_gpu_status()
+
+
+def torch_update_gpu_status():
+    if torch.cuda.is_available():
+        gpu_info = torch.cuda.get_device_name(0)
+        gpu_memory = torch.cuda.mem_get_info(0)
+        total_memory = gpu_memory[1] / (1024 * 1024)
+        free_memory = gpu_memory[0] / (1024 * 1024)
+        used_memory = (gpu_memory[1] - gpu_memory[0]) / (1024 * 1024)
+
+        gpu_status = f"GPU: {gpu_info} Free Memory:{free_memory}MB   Total Memory: {total_memory:.2f} MB  Used Memory: {used_memory:.2f} MB"
+    else:
+        gpu_status = "No GPU available"
+    return gpu_status
+
+
+def update_cpu_status():
+    import datetime
+    # Get the current time
+    current_time = datetime.datetime.now().time()
+    # Convert the time to a string
+    time_str = current_time.strftime("%H:%M:%S")
+
+    cpu_percent = psutil.cpu_percent()
+    cpu_status = f"CPU Usage: {cpu_percent}% {time_str}"
+    return cpu_status
+
+
+def update_status():
+    gpu_status = update_gpu_status()
+    cpu_status = update_cpu_status()
+    sys_status = gpu_status+"\n\n"+cpu_status
+    return sys_status
+
+
+def refresh_status():
+    return update_status()
+
 
 language_code_to_name = {
     "afr": "Afrikaans",
@@ -426,7 +533,8 @@ text_source_language_codes = [
     "zsm",
     "zul",
 ]
-TEXT_SOURCE_LANGUAGE_NAMES = sorted([language_code_to_name[code] for code in text_source_language_codes])
+TEXT_SOURCE_LANGUAGE_NAMES = sorted(
+    [language_code_to_name[code] for code in text_source_language_codes])
 
 # Target langs:
 # S2ST / T2ST
@@ -470,10 +578,113 @@ s2st_target_language_codes = [
 ]
 # Language dict
 
-S2ST_TARGET_LANGUAGE_NAMES = sorted([language_code_to_name[code] for code in s2st_target_language_codes])
+S2ST_TARGET_LANGUAGE_NAMES = sorted(
+    [language_code_to_name[code] for code in s2st_target_language_codes])
 T2ST_TARGET_LANGUAGE_NAMES = S2ST_TARGET_LANGUAGE_NAMES
 
 # S2TT / T2TT / ASR
 S2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
 T2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
 ASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
+_LANGUAGE_CODES = (
+    "af",
+    "am",
+    "ar",
+    "as",
+    "az",
+    "ba",
+    "be",
+    "bg",
+    "bn",
+    "bo",
+    "br",
+    "bs",
+    "ca",
+    "cs",
+    "cy",
+    "da",
+    "de",
+    "el",
+    "en",
+    "es",
+    "et",
+    "eu",
+    "fa",
+    "fi",
+    "fo",
+    "fr",
+    "gl",
+    "gu",
+    "ha",
+    "haw",
+    "he",
+    "hi",
+    "hr",
+    "ht",
+    "hu",
+    "hy",
+    "id",
+    "is",
+    "it",
+    "ja",
+    "jw",
+    "ka",
+    "kk",
+    "km",
+    "kn",
+    "ko",
+    "la",
+    "lb",
+    "ln",
+    "lo",
+    "lt",
+    "lv",
+    "mg",
+    "mi",
+    "mk",
+    "ml",
+    "mn",
+    "mr",
+    "ms",
+    "mt",
+    "my",
+    "ne",
+    "nl",
+    "nn",
+    "no",
+    "oc",
+    "pa",
+    "pl",
+    "ps",
+    "pt",
+    "ro",
+    "ru",
+    "sa",
+    "sd",
+    "si",
+    "sk",
+    "sl",
+    "sn",
+    "so",
+    "sq",
+    "sr",
+    "su",
+    "sv",
+    "sw",
+    "ta",
+    "te",
+    "tg",
+    "th",
+    "tk",
+    "tl",
+    "tr",
+    "tt",
+    "uk",
+    "ur",
+    "uz",
+    "vi",
+    "yi",
+    "yo",
+    "zh",
+    "yue",
+)
