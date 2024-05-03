@@ -57,6 +57,8 @@ def run_asr(input_audio: str, target_language: str) -> str:
     for i in result["segments"]:
         if i["end"] - i["start"] < 0.7:
             continue
+        if "speaker" not in i:
+            continue
 
         Text += format_timestamp(i["start"]) + " " + format_timestamp(i["end"]) + " " + \
             i["speaker"] + " " + i["text"] + "\n"
