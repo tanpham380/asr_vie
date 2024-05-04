@@ -96,14 +96,14 @@ with demo:
 # with demo:
 #     gr.TabbedInterface([mf_transcribe, ], ["Audio",])
 
-#     with gr.Row():
-#         refresh_button = gr.Button("Refresh Status")  # Create a refresh button
+    with gr.Row():
+        refresh_button = gr.Button("Refresh Status")  # Create a refresh button
 
     sys_status_output = gr.Textbox(label="System Status", interactive=False)
 
 
 #     # Link the refresh button to the refresh_status function
-#     refresh_button.click(refresh_status, None, [sys_status_output])
+    refresh_button.click(update_status, None, [sys_status_output])
 
 #     # Load the initial status using update_status function
     demo.load(update_status, inputs=None, outputs=[

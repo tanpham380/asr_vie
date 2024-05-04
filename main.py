@@ -103,9 +103,9 @@ class AudioOfficial:
                 chunksize,
                 batch_size,
                 True,
-                True
+                False
             )
-        print(result1)
+        # print(result1)
         if self.remove_cache():
             diarize_segments = self.diarize_model(
                 input_audio,
@@ -126,21 +126,45 @@ class AudioOfficial:
                 True,
 
             )
-        Text = ''
 
-        # self.translate2.transcribe()
-        for i in result1["segments"]:
-            if i["end"] - i["start"] < 0.7:
-                continue
-            if "speaker" not in i:
-                continue
-            if i["text"] in [' Hẹn gặp lại các bạn trong những video tiếp theo nhé!', ' Cảm ơn các bạn đã theo dõi.']:
+        def format_segment_timestamps(segment):
+            return f"{format_timestamp(segment['start'])} {format_timestamp(segment['end'])}"
 
-                continue
+        # # self.translate2.transcribe()
+        # Text = [
+        #     f"{format_segment_timestamps(segment)} {segment['speaker']} {segment['text']} \n"
+        #     for segment in result1["segments"]
+        #     # More descriptive name
+        #     if segment["end"] - segment["start"] >= 0.6
+        #     and "speaker" in segment
+        #     and segment["text"] not in ["Hẹn gặp lại các bạn trong những video tiếp theo nhé!", "Cảm ơn các bạn đã theo dõi."]
+        # ]
+        Text = " ".join([
+            f"{format_segment_timestamps(segment)} {segment['speaker']} {segment['text']}"
+            for segment in result1["segments"]
+            if segment["end"] - segment["start"] >= 0.6
+            and "speaker" in segment
+            and segment["text"] not in ["Hẹn gặp lại các bạn trong những video tiếp theo nhé!", "Cảm ơn các bạn đã theo dõi."]
+        ])
 
-            Text += format_timestamp(i["start"]) + " " + format_timestamp(i["end"]) + " " + \
-                i["speaker"] + " " + i["text"] + "\n"
-        Text2 = result2["segments"]["text"]
+        # for i in result1["segments"]:
+        #     if i["end"] - i["start"] < 0.7:
+        #         continue
+        #     if "speaker" not in i:
+        #         continue
+        #     if i["text"] in [' Hẹn gặp lại các bạn trong những video tiếp theo nhé!', ' Cảm ơn các bạn đã theo dõi.']:
+
+        #         continue
+
+        #     Text += format_timestamp(i["start"]) + " " + format_timestamp(i["end"]) + " " + \
+        # #         i["speaker"] + " " + i["text"] + "\n"
+        # Text2 = [segment["text"] for segment in result2["segments"]
+        #          if "text" in segment]  # Handle potential missing key
+        Text2 = " ".join([segment["text"]
+                         for segment in result2["segments"] if "text" in segment])
+        Text = Text[1:-1].replace("'", "")
+        Text2 = Text2[1:-1].replace("'", "")
+
         return Text, Text2
 
     def remove_cache(self):
