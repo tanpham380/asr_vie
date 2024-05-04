@@ -59,6 +59,9 @@ def run_asr(input_audio: str, target_language: str) -> str:
             continue
         if "speaker" not in i:
             continue
+        if i["text"] in [' Hẹn gặp lại các bạn trong những video tiếp theo nhé!', ' Cảm ơn các bạn đã theo dõi.']:
+
+            continue
 
         Text += format_timestamp(i["start"]) + " " + format_timestamp(i["end"]) + " " + \
             i["speaker"] + " " + i["text"] + "\n"

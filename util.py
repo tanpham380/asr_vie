@@ -534,58 +534,9 @@ text_source_language_codes = [
     "zul",
 ]
 TEXT_SOURCE_LANGUAGE_NAMES = sorted(
-    [language_code_to_name[code] for code in text_source_language_codes])
+    [language_code_to_name[code] for code in text_source_language_codes]
+)
 
-# Target langs:
-# S2ST / T2ST
-s2st_target_language_codes = [
-    "eng",
-    "arb",
-    "ben",
-    "cat",
-    "ces",
-    "cmn",
-    "cym",
-    "dan",
-    "deu",
-    "est",
-    "fin",
-    "fra",
-    "hin",
-    "ind",
-    "ita",
-    "jpn",
-    "kor",
-    "mlt",
-    "nld",
-    "pes",
-    "pol",
-    "por",
-    "ron",
-    "rus",
-    "slk",
-    "spa",
-    "swe",
-    "swh",
-    "tel",
-    "tgl",
-    "tha",
-    "tur",
-    "ukr",
-    "urd",
-    "uzn",
-    "vie",
-]
-# Language dict
-
-S2ST_TARGET_LANGUAGE_NAMES = sorted(
-    [language_code_to_name[code] for code in s2st_target_language_codes])
-T2ST_TARGET_LANGUAGE_NAMES = S2ST_TARGET_LANGUAGE_NAMES
-
-# S2TT / T2TT / ASR
-S2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
-T2TT_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
-ASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
 _LANGUAGE_CODES = (
     "af",
     "am",
@@ -688,3 +639,14 @@ _LANGUAGE_CODES = (
     "zh",
     "yue",
 )
+
+# Language dict
+
+ASR_TARGET_LANGUAGE_NAMES = TEXT_SOURCE_LANGUAGE_NAMES
+
+
+# ASR_TARGET_LANGUAGE_CODES = [LANGUAGE_NAME_TO_CODE.get(name, None) for name in ASR_TARGET_LANGUAGE_NAMES]
+# ASR_TARGET_LANGUAGE_CODES = [code for code in ASR_TARGET_LANGUAGE_CODES if code is not None]
+
+# _LANGUAGE_CODE_TO_NAME = {
+#     code: language_code_to_name[code] for code in _LANGUAGE_CODES}

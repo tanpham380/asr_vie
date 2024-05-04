@@ -1,12 +1,5 @@
 
-from typing import BinaryIO, Iterable, List, NamedTuple, Optional, Tuple, Union
-from diarize import DiarizationPipeline, assign_word_speakers
-from util import (
 
-    convert_segments,
-    decode_audio,
-    format_text_segments,
-)
 import torch
 import gc
 
@@ -14,142 +7,168 @@ import gc
 
 
 # from faster_whisper import WhisperModel
-from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline, AddedToken, WhisperTokenizerFast, WhisperProcessor
 
-from vad import VadOptions, collect_chunks, get_speech_timestamps, restore_speech_timestamps
+import whisperx
+
+from contextlib import nullcontext
+
+from util import format_timestamp
 
 
 class AudioOfficial:
-
-    def loadmodel(self, model_id, pipeline_name):
-
-        model = AutoModelForSpeechSeq2Seq.from_pretrained(
-            model_id, torch_dtype=torch.float32, low_cpu_mem_usage=True, use_safetensors=True, cache_dir=self.download_root)
-        processor = AutoProcessor.from_pretrained(
-            model_id, cache_dir=self.download_root)
-        model.to(self.cuda)
-        model.config.forced_decoder_ids = processor.get_decoder_prompt_ids(
-            language="vietnamese", task="transcribe")
-        timestamps = [AddedToken("<|%.2f|>" % (
-            i * 0.02), lstrip=False, rstrip=False) for i in range(1500 + 1)]
-        processor.tokenizer.add_tokens(timestamps)
-
-        # processor = AutoProcessor.from_pretrained(model_id , cache_dir=self.download_root)
-        pip = pipeline(
-            pipeline_name,
-            model=model,
-            tokenizer=processor.tokenizer,
-            feature_extractor=processor.feature_extractor,
-            max_new_tokens=128,
-            chunk_length_s=30,
-            batch_size=16,
-            return_timestamps=True,
-            torch_dtype=self.compute_type,
-            device=self.cuda,
-        )
-        return pip
 
     def __init__(self, **kwargs):
 
         if torch.cuda.is_available():
             self.cuda = torch.device("cuda:0")
-            self.compute_type = torch.float32
+            self.compute_type = torch.float16
             self.devicewhisper = "cuda"
         else:
             self.cuda = torch.device("cpu")
             self.compute_type = torch.float32
             self.devicewhisper = "cpu"
         self.download_root = kwargs.get("down_nmodel_path", "./models/")
-        computer_type = "float32" if self.compute_type == torch.float32 else "float32"  # float32"
-#         # "vinai/PhoWhisper-large"
+        self.computer_type = "float32" if self.compute_type == torch.float32 else "int8"  # float32"
 
-        self.transcriber1 = AudioOfficial.loadmodel(
-            self, "openai/whisper-large-v3", "automatic-speech-recognition")
+        self.translate1 = whisperx.load_model("large-v2", device=self.devicewhisper, compute_type=self.computer_type, download_root=self.download_root, threads=100,
+                                              asr_options={
+                                                  "max_new_tokens": 120,
 
-        # self.model_id = "vinai/PhoWhisper-large"
-        self.transcriber2 = AudioOfficial.loadmodel(
-            self, "/home/gitlab/asr/models/PhoWhisper-large", "automatic-speech-recognition")
-        self.diarize_model = DiarizationPipeline(
+
+                                              },
+                                              #   language="vi",
+                                              vad_options={
+                                                  "vad_onset": 0.500,
+                                                  "vad_offset": 0.363
+                                              })
+        self.translate2 = whisperx.load_model("/home/gitlab/asr/models/PhoWhisper-large-ct", device=self.devicewhisper, compute_type=self.computer_type, download_root=self.download_root, threads=100,
+                                              asr_options={
+                                                  "max_new_tokens": 120,
+                                              },
+                                              language="vi",
+                                              vad_options={
+                                                  "vad_onset": 0.500,
+                                                  "vad_offset": 0.363
+                                              }
+                                              )
+        self.diarize_model = whisperx.DiarizationPipeline(
             use_auth_token="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", device=self.devicewhisper)
-        # self.vadfilter = kwargs.get("vadfilter", None)
-        # self.model = WhisperModel("./models/PhoWhisper-large-ct2" ,download_root=self.download_root, compute_type=computer_type, device=self.devicewhisper , num_workers= 4)
+
         print("Loading model with device: ", self.devicewhisper,
-              " and compute type: ", computer_type)
-        # self.vad_model = load_vad_model(
-        #     device=self.cuda, use_auth_token=None, )
+              " and compute type: ", self.computer_type)
 
-        # default_vad_options = {
-        #     "vad_onset": 0.500,
-        #     "vad_offset": 0.363
-        # }
-        # self.progesspipeline = FlaxWhisperPipline("openai/whisper-large-v3")
+    # def ExtractText(self, path_audio, **kwargs):
+    #     language = kwargs.get("language", "vi")
+    #     chunksize = kwargs.get("chunk", "16")
+    #     batch_size = 32
+    #     self.remove_cache()
+    #     # audio = whisperx.load_audio(path_audio)
+    #     input_audio = whisperx.load_audio(path_audio)
 
-     #   self.transcriber2 = pipeline("automatic-speech-recognition", model="vinai/PhoWhisper-large" , device= self.cuda , return_timestamps=True #,chunk_length_s=30,batch_size=16,return_timestamps=False, max_new_tokens=128,)
-    #    )
-        # self.model = WhisperModel("large-v2" ,download_root=self.download_root, compute_type=computer_type, device=self.devicewhisper ,  num_workers= 4 , cpu_threads = 100)
+    #     segments_list1 = self.translate1.transcribe(
+    #         input_audio, batch_size=batch_size, print_progress=False, chunk_size=chunksize)
+    #     self.remove_cache()
+    #     model_a, metadata = whisperx.load_align_model(
+    #         language_code=segments_list1["language"], device=self.devicewhisper, compute_type=self.compute_type, download_root=self.download_root)
+    #     result = whisperx.align(
+    #         result["segments"], model_a, metadata, input_audio, self.devicewhisper, return_char_alignments=False)
+    #     self.remove_cache()
+    #     diarize_segments = self.diarize_model(
+    #         input_audio, max_speakers=2, min_speakers=1)
+    #     result = whisperx.assign_word_speakers(diarize_segments, result)
+    #     self.remove_cache()
 
-        # self.translator = Translator("seamlessM4T_v2_large", vocoder_name_or_card="vocoder_v2",device=self.cuda , dtype=self.compute_type ,)
-        # seamlessM4T_medium vocoder_36langs
-        # seamlessM4T_v2_large vocoder_v2
+    #     segments_list1 = self.translate2.transcribe(
+    #         input_audio, batch_size=batch_size, print_progress=False, chunk_size=chunksize)
+    #     self.remove_cache()
+    #     model_a, metadata = whisperx.load_align_model(
+    #         language_code=segments_list1["language"], device=self.devicewhisper, compute_type=self.compute_type, download_root=self.download_root)
+    #     result2 = whisperx.align(
+    #         result["segments"], model_a, metadata, input_audio, self.devicewhisper, return_char_alignments=False)
+    #     self.remove_cache()
 
-        # self.translator = Translator("seamlessM4T_medium", vocoder_name_or_card="vocoder_36langs",device=self.cuda , dtype=self.compute_type ,)
-
+    #     return result, result2
     def ExtractText(self, path_audio, **kwargs):
-        language = kwargs.get("language", "vi")
-        # audio = whisperx.load_audio(path_audio)
+        language = kwargs.get("language", "Vietnamese")
+        chunksize = kwargs.get("chunk", "16")
+        batch_size = 32
 
-        gc.collect()
-        torch.cuda.empty_cache()
-        input_audio = decode_audio(path_audio)
-        # print(self.filterVAD(input_audio))
+        input_audio = whisperx.load_audio(path_audio)
 
-        filtered_audio, speech_chunks = self.filterVAD(input_audio)
-        segments_list1 = self.transcriber1(filtered_audio, generate_kwargs={
-                                           "language": "Vietnamese"})
-        print(segments_list1)
+        if self.remove_cache():
+            result1 = self.transcribe_and_align(
+                self.translate1,
+                input_audio,
+                self.devicewhisper,
+                chunksize,
+                batch_size,
+                True,
+                True
+            )
+        print(result1)
+        if self.remove_cache():
+            diarize_segments = self.diarize_model(
+                input_audio,
+                max_speakers=2,
+                min_speakers=1
+            )
+            result1 = whisperx.assign_word_speakers(diarize_segments, result1)
 
-        # restore speech timestamps
-        print(f"chunks: {segments_list1['chunks']}",)
-        segments = None
-        if speech_chunks:
-            segments = restore_speech_timestamps(
-                segments, speech_chunks, 16000)
+        ctx = self.remove_cache()
+        if ctx:
+            result2 = self.transcribe_and_align(
+                self.translate2,
+                input_audio,
+                self.devicewhisper,
+                99999,
+                batch_size,
+                False,
+                True,
 
-            # filtered_audio = self.filterVAD(input_audio)
-        print("segments: {segments}")
-        converted_json = convert_segments(segments_list1['chunks'])
-        # print(json.dumps(converted_json, indent=2))
-        print(converted_json)
+            )
+        Text = ''
 
-        gc.collect()
-        torch.cuda.empty_cache()
-        # Resuft = self.progesspipeline(input_audio)
+        # self.translate2.transcribe()
+        for i in result1["segments"]:
+            if i["end"] - i["start"] < 0.7:
+                continue
+            if "speaker" not in i:
+                continue
+            if i["text"] in [' Hẹn gặp lại các bạn trong những video tiếp theo nhé!', ' Cảm ơn các bạn đã theo dõi.']:
 
-        diarize_segments = self.diarize_model(input_audio, max_speakers=2)
-        result = assign_word_speakers(
-            diarize_segments, converted_json)
-        print(result)
+                continue
 
-        Result1 = format_text_segments(segments_list1['chunks'])
+            Text += format_timestamp(i["start"]) + " " + format_timestamp(i["end"]) + " " + \
+                i["speaker"] + " " + i["text"] + "\n"
+        Text2 = result2["segments"]["text"]
+        return Text, Text2
 
-        segments_list2 = self.transcriber2(filtered_audio, generate_kwargs={
-                                           "language": "Vietnamese"})
+    def remove_cache(self):
+        try:
+            gc.collect()
+            torch.cuda.empty_cache()
+        except Exception as e:
+            print(e)
+            return False
+        return True
 
-    def filterVAD(self, audio, vad_filter: bool = True, vad_parameters: Optional[Union[dict, VadOptions]] = None, sampling_rate=16000, clip_timestamps=0):
-        duration = audio.shape[0] / sampling_rate
-        duration_after_vad = duration
-        print("Duration before VAD: ", duration)
-        if vad_filter:
-            if vad_parameters is None:
-                vad_parameters = VadOptions()
-            elif isinstance(vad_parameters, dict):
-                vad_parameters = VadOptions(**vad_parameters)
-            speech_chunks = get_speech_timestamps(audio, vad_parameters)
-            audio = collect_chunks(audio, speech_chunks)
-            duration_after_vad = audio.shape[0] / sampling_rate
-            print("Duration after VAD: ", duration_after_vad)
-            print("test")
-            print(speech_chunks)
-            return audio, speech_chunks
+    def transcribe_and_align(self, translator, audio, device, chunksize, batch_size, have_align=True,  set_charalignments=False):
+        segments = translator.transcribe(
+            audio, print_progress=False, batch_size=batch_size, chunk_size=chunksize)
+
+        if have_align:
+            model_a, metadata = whisperx.load_align_model(
+                language_code=segments["language"],
+                device=device,
+            )
+            result = whisperx.align(
+                segments["segments"],
+                model_a,
+                metadata,
+                audio,
+                device,
+                return_char_alignments=set_charalignments
+            )
         else:
-            return audio, None
+            result = segments
+        return result
